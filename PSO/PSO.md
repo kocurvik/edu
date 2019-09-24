@@ -1,3 +1,4 @@
+# Pokročilé Spracovanie Obrazu
 
 ## TERMÍN PREDNÁŠKY
 
