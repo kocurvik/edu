@@ -38,7 +38,9 @@
 
 ### Úlohy
 
-TBA
+Zadania domácich úloh sú v priečinku du.
+
+Prvé zadanie je uploadnuté jeho deadline je **6.11.2019 14:50**.
 
 ### Projekty
 
