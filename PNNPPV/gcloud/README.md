@@ -50,6 +50,16 @@ Po deploynutí virtuálneho stroja sa dostanete do Deployment Managera. My sa al
 
 Na prístup môžeme využiť priamo terminál cez prehliadač. Alebo ak mám nainštalované Google Cloud SDK, tak si môžeme skopírovať príkaz pomocou ktorého sa nám na našom počítači otvorí ssh terminál do tohto stroja.
 
+*Pozn:* Ak sa prihlasujeme cez gcloud príkaz, tak sa prihlásime s uživateľským menom podľa toho ako sme prihlásený na našom počítači. Ak chceme iné meno musíme príkaz zmeniť z:
+```
+gcloud compute --project "<project-name>" ssh --zone "europe-west1-b" "<instance-name>"
+```
+na
+```
+gcloud compute --project "<project-name>" ssh --zone "europe-west1-b" "<user_name>@<instance-name>"
+```
+
+![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/ssh1.png)
 
 ## Prenos súborov
 
@@ -109,3 +119,25 @@ jupyter notebook
 
 Po tomto stačí do prehliadača na ľubovoľnom počítači pripojenom na internet zadať adresu <vaša externá statická IP>:8888 a dostanete s k jupyter notebooku.
 
+
+## Úloha - fine-tuning
+
+Túto úlohu vypracujte na cloude. Pripraviť si ju môžete u seba, alebo v Colabe. Skúste si ju však spustiť aj na cloude.
+
+V tejto úlohe budeme trénovať sieť s predtrénovanými váhami tzv. fine-tuning alebo transfer learning. Predtrénované modely prevezmeme z [keras applications](https://keras.io/applications/) na datasete cats vs. dogs, ktorý stiahnete napríklad tu:
+
+```
+http://files.fast.ai/data/dogscats.zip
+```
+
+Pre prácu s datasetom použite ImageDataGenerator a jeho metódu flow_from_directory.
+
+
+Po načítaní modelu máme tri možnosti, buď ponecháme vrstvy ako trénovateľne, všetky zamrazíme, alebo zamrazíme len niektoré začiatočne. Zmrziť vrstvy môýžeme napr.:
+```python
+xception = keras.applications.xception.Xception(include_top = False)
+for layer in xception.layers:
+    layer.trainable = False
+```
+
+Model použite "bez vrcholu" (include_top = False). A pridajte ho ako "vrstvu" do sekvenčného modelu a po ňom realizujte globálny pooling a kratšiu plne prepojenú sieť na klasifikáciu. Otestujte ako ide tréning pre všetky tri možnosti trénovania častí siete.
