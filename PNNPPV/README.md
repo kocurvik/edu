@@ -1,5 +1,10 @@
 # Neurónové siete pre počítačové videnie
 
+Tú nájdete súbory k predmetu Praktikum z neuronových sietí pre počítačové videnie
+
+[Bodovacia tabuľka](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
+
+
 
 ## Domáca úloha č 1
 
