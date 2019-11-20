@@ -44,7 +44,7 @@ Prvé zadanie je uploadnuté jeho deadline je **6.11.2019 14:50**.
 
 ### Projekty
 
-TBA
+segmentácia ruky, spočítanie hodnoty mincí na stole, detekcia hodu hracej kocky, spočítanie kníh na poličke, vlastná téma
 
 #### Požiadavky
 
