@@ -53,7 +53,12 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
-Deadline je do **6.11. 23:59**. Ak nebudete stíhať, tak pri neskoršom odovzdaní budem strhávať body.
+Deadline je do **TBA**. Ak nebudete stíhať, tak pri neskoršom odovzdaní budem strhávať body.
+
+
+## Domáca úloha č. 1 (20b) - Alternatíva
+
+Ako alternatívu prvej domácej úlohy je možné jeden z notebookov z cvičení prepísať do iného frameworku. Cieľové frameworky môžu byť JAX a PyTorch. Ak máte záujem o túto formu prvej domácej úlohy, tak je nutné tento postup prekonzultovať aspoň týždeň týždeň pred deadlinom originálneho zadania.
 
 
 ## Domáca úloha č. 2 (20b)
@@ -103,7 +108,7 @@ Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne 
 
 Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv).  Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
 
-Deadline na úlohu je **16:30 4.12.2019**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
+Deadline na úlohu je **TBA**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
 
 ## Domáca úloha č. 3 (10b)
 
