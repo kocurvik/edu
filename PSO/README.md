@@ -2,11 +2,11 @@
 
 ## TERMÍN PREDNÁŠKY
 
-* pondelok 12:20 , M - XII
+* utorok 14:50 , M - XII
 
 ## TERMÍNY CVIČENÍ
 
-* streda 14:50 , F1-248
+* štvrtok 11:30 , F1-248
 
 
 ## PREDNÁŠKY / CVIČENIA
@@ -40,7 +40,7 @@
 
 Zadania domácich úloh sú v priečinku du.
 
-Prvé zadanie je uploadnuté jeho deadline je **6.11.2019 14:50**.
+Prvé zadanie je uploadnuté jeho deadline je **TBA**.
 
 ### Projekty
 
