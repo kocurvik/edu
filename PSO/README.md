@@ -26,7 +26,7 @@
 | | | |
 |-|-|-|
 | veľké úlohy (2x7,5 boda) | 15 bodov |
-| malé úlohy (5x3body) | 15 bodov |
+| aktivita na cviečeniach + malé úlohy (max 10 bodov) | 15 bodov |
 | projekt | 20 bodov |
 | spolu | 50 bodov |
 | minimum potrebné na pustenie ku skúške | 30 bodov |
