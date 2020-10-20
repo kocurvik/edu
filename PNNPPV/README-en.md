@@ -38,7 +38,7 @@ Perform both of these on the original train/val split and special case where you
 
 ### Deeper network (5b)
 
-Design a deep network (at least 11 layers, but the network can be very thin). Test it out at first without minibatch, residual or dense connections or auxillary training layers. Test out at least two of these approaches so that you end up with at least 3 models.
+Design a deep network (at least 11 layers, but the network can be very thin). Test it out at first without BatchNorm, residual or dense connections or auxillary training layers. Test out at least two of these approaches so that you end up with at least 3 models.
 
 Note: If you plan to use residual or dense connections you have to design the network in a way which allows their placement somewhere in the network.
 
