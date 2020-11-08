@@ -14,7 +14,14 @@ Ak nepoužívate inštancie, tak ich vypínajte! To isté platí o rezervácii s
 
 Ako prvé si budete musieť vytvoriť na [Google Cloude](https://cloud.google.com/) účet a následne vytvoriť projekt a pridať k nemu Vaše kódy na kredity k tomuto predmetu.
 
-Túto časť si nepamätám na cviku to snáď spravíme. 
+Po aktivácii máte možnosť dostať ďalších 300 dolárov kreditov. Tieto kredity si aplikujte tiež. Neskôr sa Vám zobrazí popup na upgrade konta. Upgradnite si ho (bude potrebné použiť bankomatovú kartu). Pokiaľ nevyčerpáte kredity (300 + 50 kreditov je dosť), tak platiť nebudete.
+
+## Aktivácia Google Compute Engine
+
+Pre predchádzajúcim krokom je nutné aktivovať Google Compute Engine. To sa robí jednoducho kliknutím na Google Compute Engine v menu.
+
+![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/init_compute.png)
+
 
 ### Sprístupnenie GPU
 
@@ -52,12 +59,15 @@ Na prístup môžeme využiť priamo terminál cez prehliadač. Alebo ak mám na
 
 *Pozn:* Ak sa prihlasujeme cez gcloud príkaz, tak sa prihlásime s uživateľským menom podľa toho ako sme prihlásený na našom počítači. Ak chceme iné meno musíme príkaz zmeniť z:
 ```
-gcloud compute --project "<project-name>" ssh --zone "europe-west1-b" "<instance-name>"
+gcloud compute --project "<project-name>"  --zone "<zone>" ssh "<instance-name>"
 ```
 na
 ```
-gcloud compute --project "<project-name>" ssh --zone "europe-west1-b" "<user_name>@<instance-name>"
+gcloud compute --project "<project-name>"  --zone "<zone>" ssh "<user_name>@<instance-name>"
 ```
+
+Názov projektu si môžete pozrieť, tak že si na zozname VM vyberiete aby sa Vám príkaz SSH uložil do clipboardu.
+
 
 ![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/ssh1.png)
 
@@ -68,7 +78,7 @@ Pre prenos súborov budeme potrebovať [Google Cloud SDK](https://cloud.google.c
 Súbory sa potim prenášajú pomocou:
 
 ```
-gcloud compute scp <user>@<instance-name>:/path/to/file /local/path
+gcloud compute scp --project "<project-name>"  --zone "<zone>" <user>@<instance-name>:/path/to/file /local/path
 ```
 
 Alebo naopak. 
@@ -127,7 +137,7 @@ Túto úlohu vypracujte na cloude. Pripraviť si ju môžete u seba, alebo v Col
 V tejto úlohe budeme trénovať sieť s predtrénovanými váhami tzv. fine-tuning alebo transfer learning. Predtrénované modely prevezmeme z [keras applications](https://keras.io/applications/) na datasete cats vs. dogs, ktorý stiahnete napríklad tu:
 
 ```
-http://files.fast.ai/data/dogscats.zip
+https://www.floydhub.com/swaroopgrs/datasets/dogscats/1
 ```
 
 Pre prácu s datasetom použite ImageDataGenerator a jeho metódu flow_from_directory.
