@@ -59,11 +59,11 @@ Na prístup môžeme využiť priamo terminál cez prehliadač. Alebo ak mám na
 
 *Pozn:* Ak sa prihlasujeme cez gcloud príkaz, tak sa prihlásime s uživateľským menom podľa toho ako sme prihlásený na našom počítači. Ak chceme iné meno musíme príkaz zmeniť z:
 ```
-gcloud compute --project "<project-name>"  --zone "<zone>" ssh "<instance-name>"
+gcloud compute ssh --project "<project-name>"  --zone "<zone>" "<instance-name>"
 ```
 na
 ```
-gcloud compute --project "<project-name>"  --zone "<zone>" ssh "<user_name>@<instance-name>"
+gcloud compute ssh --project "<project-name>"  --zone "<zone>" "<user_name>@<instance-name>"
 ```
 
 Názov projektu si môžete pozrieť, tak že si na zozname VM vyberiete aby sa Vám príkaz SSH uložil do clipboardu.
@@ -75,7 +75,7 @@ Názov projektu si môžete pozrieť, tak že si na zozname VM vyberiete aby sa 
 
 Pre prenos súborov budeme potrebovať [Google Cloud SDK](https://cloud.google.com/sdk/docs/). Nainštalujte si ju na počítač (stačí pre jedného uživateľa). Pri inštalácii na konci nechajte zaškrtnuté všetky políčka. Po spustení shellu vyberte región **europe-west1** a zónu **europe-west1-b**.
 
-Súbory sa potim prenášajú pomocou:
+Súbory sa potim prenášajú pomocou (ak je zóna rovnaká ako v predchádzajúcom kroku, tak ju nemusíte špecifikovať):
 
 ```
 gcloud compute scp --project "<project-name>"  --zone "<zone>" <user>@<instance-name>:/path/to/file /local/path
