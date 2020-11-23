@@ -139,6 +139,10 @@ V tejto úlohe budeme trénovať sieť s predtrénovanými váhami tzv. fine-tun
 ```
 https://www.floydhub.com/swaroopgrs/datasets/dogscats/1
 ```
+alebo
+```
+https://files.fast.ai/data/examples/dogscats.tgz
+```
 
 Pre prácu s datasetom použite ImageDataGenerator a jeho metódu flow_from_directory.
 
