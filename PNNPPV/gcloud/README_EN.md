@@ -137,6 +137,10 @@ This task deals with fine-tuning a neural network which was already pretrained o
 ```
 https://www.floydhub.com/swaroopgrs/datasets/dogscats/1
 ```
+alebo
+```
+https://files.fast.ai/data/examples/dogscats.tgz
+```
 
 To use that dataset use the ImageDataGenerator and its method flow_from_directory.
 
