@@ -111,7 +111,9 @@ Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne 
 
 Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv).  Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
 
-Deadline na úlohu je **TBA**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
+Deadline na vybratie objektového detektora je cvičenie **1.12.2020**. Detektor mi môžete poslať na MS Teams, mailom, alebo ho môžme prekonzultovať osobne po cvičení.
+
+Deadline na celú úlohu je **13.12.2020**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
 
 ## Domáca úloha č. 3 (10b)
 
