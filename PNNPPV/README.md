@@ -70,7 +70,7 @@ Cieľom druhej domácej úlohy bude natrénovať objektový detektor na menšom 
 
 ### Objektový detektor
 
-Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, Faster R-CNN, CenterNet (existujú dva rôzne), CornerNet atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pre istotu pošlite na schválenie na mail. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
+Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, Faster R-CNN, CenterNet (existujú dva rôzne), CornerNet atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
 
 Ako pri minulej úlohe budete aj tento krát odovzdávať pdf súbor. V jeho úvode tak stručne popíšte ako funguje zvolený objektový detektor. Dôležité je popísať základný princíp. Kľudne použite obrázky z publikácie k danému detektoru, alebo odinadiaľ z internetu. Tento text by mal obsahovať odpoveď na otázky:
 
@@ -93,17 +93,17 @@ V anotácii k datasetu sú k dispozícii aj bounding boxy. Asi najdôležitejš�
 
 ### Tréning
 
-Trénovať budete dva modely. Jeden bude detegovať bounding boxy pre rôzne triedy a druhý bude detegovať všetky bounding boxy ako jednu triedu.
+Trénovať budete dva modely. Jeden bude detegovať bounding boxy pre rôzne triedy (každé plemeno je iná trieda) a druhý bude detegovať všetky bounding boxy ako jednu triedu (máme iba jednu triedu psa).
 
 Väčšina objektových detektorov má dopredu nastavené približné parametre na trénovanie a taktiež poskytuje predtrénované modely. Tieto kľudne použite, avšak bol by som rád ak by ten model nebol predtrénovaný zrovna na ImageNete (Stanford Dogs sú jeho podmnožina). Vytvorte si validačnú množinu a sledujte ako sa model učí. Ak to kód umožnuje je lepšie sledovat miery ako mAP, alebo AP50 (o nich nižšie). Takisto je fajn použiť redukciu trénovacieho kroku, alebo augmentáciu obrazu. Tieto veci neimplementujte ak niesú v stiahnutej implementácii, ale ak sa Vám chce tak samoszrejme môžete. Priebeh tréningu, spôsob delenia množiny a zvolené parametre taktiež pridajte do pdf.
 
 ### Vyhodnotenie
 
-Pre každý model bude nutné vytvoriť vyhodnotenie. Budeme používať najmä [IoU metriku](https://en.wikipedia.org/wiki/Jaccard_index) a miery AP teda average precision, teda počet objektov ktoré sme správne detegovali / počet objektov v testovacej množine zpriemerovaný pre všetky triedy. Tu je samozrejme otázka, čo znamená správna detekcia a práve to určíte IoU metrikou. Napríklad skóre AP50 znamená, precision ak ako true positive berieme bounding box, ktorý má oproti ground truth IoU > 0.5. Často sa taktiež používa miera mAP (mean average precision) čo je priemer pre viacero hodnôt AP teda napr. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18
+Pre každý model bude nutné vytvoriť vyhodnotenie. Budeme používať najmä [IoU metriku](https://en.wikipedia.org/wiki/Jaccard_index) a miery AP teda average precision, teda počet objektov ktoré sme správne detegovali / počet objektov v testovacej množine zpriemerovaný pre všetky triedy. Tu je samozrejme otázka, čo znamená správna detekcia a práve to určíte IoU metrikou. Napríklad skóre AP50 znamená, precision ak ako true positive (správne detegovaný) berieme bounding box, ktorý má oproti ground truth IoU > 0.5. Často sa taktiež používa miera mAP (mean average precision) čo je priemer pre viacero hodnôt AP teda napr. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18
 
 Pre model ktorý deteguje iba jednu obecnú triedu pes samozrejme A v AP nedáva až tak zmysel, keďže máme jednu triedu, ale budeme ho používať pre konzistenciu. Vo vyhodnotení vytvorte graf (scatter plot) kde bude vidno jednolivé hodnoty pre rôzne IoU prahy AP. Takisto spočítajte hodnotu mAP ako je definovaná v predchádzajúcom odstavci. 
 
-Pre model ktorý rozlišuje plemená spočítajte AP25, AP50 a AP75. Vytvotre tabuľku (môže byť aj txt súbor) v ktorej bude pre každé plemeno zobrazený počet trénovacích dát a precion pre prahy IoU > 0.25, 0.50 a 0.75. V pdf stačí tabuľka kde budú najzaujímavejšie hodnoty (najlepšie a najhoršie pre každú z troch metrík). Okomentujte či tieto hodnoty súvisia počtom príkladov v trénovacích dátach. 
+Pre model ktorý rozlišuje plemená spočítajte AP25, AP50 a AP75. Vytvotre tabuľku (môže byť aj txt súbor) v ktorej bude pre každé plemeno zobrazený počet trénovacích dát a precision pre prahy IoU > 0.25, 0.50 a 0.75. V pdf stačí tabuľka kde budú najzaujímavejšie hodnoty (najlepšie a najhoršie pre každú z troch metrík). Okomentujte či tieto hodnoty súvisia počtom príkladov v trénovacích dátach. 
 
 Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne veľkosti bounding boxov, ale nieje to potrebné. Výsledky okomentujte. Prekvapilo Vás niečo? Čo ste sa pri tréningu naučili.
 
