@@ -70,7 +70,7 @@ Cieľom druhej domácej úlohy bude natrénovať objektový detektor na menšom 
 
 ### Objektový detektor
 
-Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, Faster R-CNN, CenterNet (existujú dva rôzne), CornerNet atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
+Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, CenterNet (existujú dva rôzne), CornerNet atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
 
 Ako pri minulej úlohe budete aj tento krát odovzdávať pdf súbor. V jeho úvode tak stručne popíšte ako funguje zvolený objektový detektor. Dôležité je popísať základný princíp. Kľudne použite obrázky z publikácie k danému detektoru, alebo odinadiaľ z internetu. Tento text by mal obsahovať odpoveď na otázky:
 
