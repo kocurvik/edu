@@ -47,3 +47,9 @@ Signatúra funkcie bude L = smery(I, n)
 Naimplementujte funkciu mykmeans(A, k), ktorá bude mať na vstupe maticu A s rozmermi n x m, kde n bude počet vektorov a m dĺžka príznakového vektora a k bude parameter k-means algoritmu. Funkcia vráti vektor dĺžky n v ktorom budú celočíselné hodnoty 1 až k podľa toho v akom klustri vektor skončil. Nezabudnite centroidy inicializovať tak, aby boli v oblastiach kde sa nachádzajú vstupné vektory.
 
 Signatúra funkcie bude l = mykmeans(A, k)
+
+### mu06 - Spojenie obrázkov vo Fourierovom spektre
+
+Naimplementujte skript, ktorý načíta dva rôzne obrázky zmení ich na rovnakú veľkosť (napr. 512 x 512). Potom spočítajte Fourierov obraz pre obidva obrázky a vytvorte kombinovaný obrázok tak, že zoberiete I. a III. kvadrant Fourierovho obrazu z prvého obrázku a II. a IV. kvadrant z druhého. Obrázok potom prekonvertujte naspäť a zobrazte.
+
+![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu06.png)
