@@ -21,7 +21,7 @@ Obrázky s vzdialenosťami vhodne naškálujte. Teda buď od 0 po aktuálnu max 
 ![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu01.png)
 
 
-### mu02 - Vzdialenosť pixelov vo farebnom priestore
+### mu02 - Rohy obdĺžnikov
 
 Vytvorte skript ktorý načíta obrázok obdĺžnikov (boxes.bmp z cv07.zip) a pomocou metódy hit and miss nájde rohy obdĺžnikov.
 
@@ -42,6 +42,8 @@ Vytvorte funkciu, ktorá bez použitia príkazu edge vráti rozdelenie pixelov p
 
 Signatúra funkcie bude L = smery(I, n)
 
+### mu05 - k-means clustering
 
+Naimplementujte funkciu mykmeans(A, k), ktorá bude mať na vstupe maticu A s rozmermi n x m, kde n bude počet vektorov a m dĺžka príznakového vektora a k bude parameter k-means algoritmu. Funkcia vráti vektor dĺžky n v ktorom budú celočíselné hodnoty 1 až k podľa toho v akom klustri vektor skončil. Nezabudnite centroidy inicializovať tak, aby boli v oblastiach kde sa nachádzajú vstupné vektory.
 
-
+Signatúra funkcie bude l = mykmeans(A, k)
