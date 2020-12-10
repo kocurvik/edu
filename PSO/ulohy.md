@@ -53,3 +53,7 @@ Signatúra funkcie bude l = mykmeans(A, k)
 Naimplementujte skript, ktorý načíta dva rôzne obrázky zmení ich na rovnakú veľkosť (napr. 512 x 512). Potom spočítajte Fourierov obraz pre obidva obrázky a vytvorte kombinovaný obrázok tak, že zoberiete I. a III. kvadrant Fourierovho obrazu z prvého obrázku a II. a IV. kvadrant z druhého. Obrázok potom prekonvertujte naspäť a zobrazte.
 
 ![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu06.png)
+
+### mu07 - Ekvalizácia histogramu
+
+Naimplementujte funkciu ktorá na vstup vezme šedotónový obrázok a na výstupe vráti obrázok po ekvalizácii histogramu. Použite algoritmus popísaný na [wikipédii](https://en.wikipedia.org/wiki/Histogram_equalization). Signatúra funkcie bude E = myhisteq(I).
