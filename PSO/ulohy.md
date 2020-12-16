@@ -71,3 +71,10 @@ Naimplementujte funkciu ktorá na vstupe vezme RGB obrázok a vráti obrázok kd
 
 
 ![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu09.png)
+
+### mu10 - ASCII zobrazenie obrázka
+
+Načítajte obrázok. Zmenšite jeho výšku na polovicu (zachovajte šírku). Následne ho zmenšite tak, aby najdlhší rozmer bol 80 pixelov pri zachovaní nového pomeru strán. Potom pre každý riadok obrázka vypíšte na štandardný výstup (funkcia disp) postupnosť symbolov z \[' ', '.', '*', ':', 'o', 'd', 'H', '#'\] tak aby reprezentovali rôzne úrovne jasu pre každý pixel. Na výstupe by ste potom pre zátišie mali dostať niečo takéto:
+
+
+![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu10.png)
