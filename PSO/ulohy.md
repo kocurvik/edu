@@ -57,3 +57,10 @@ Naimplementujte skript, ktorý načíta dva rôzne obrázky zmení ich na rovnak
 ### mu07 - Ekvalizácia histogramu
 
 Naimplementujte funkciu ktorá na vstup vezme šedotónový obrázok a na výstupe vráti obrázok po ekvalizácii histogramu. Použite algoritmus popísaný na [wikipédii](https://en.wikipedia.org/wiki/Histogram_equalization). Signatúra funkcie bude E = myhisteq(I).
+
+
+### mu08 - Zobrazenie farebných kanálov
+
+Naimplementujte funkciu ktorá na vstup vezme RGB obrázok a vykreslí ho spolu s 3 obrázkami reprezentujúcimi jednotlivé komponenty z RGB. Vykresnený obrázok bude v jednej figure ako na nasledujúcom obrázku.
+
+![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu08.png)
