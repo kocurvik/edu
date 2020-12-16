@@ -64,3 +64,10 @@ Naimplementujte funkciu ktorá na vstup vezme šedotónový obrázok a na výstu
 Naimplementujte funkciu ktorá na vstup vezme RGB obrázok a vykreslí ho spolu s 3 obrázkami reprezentujúcimi jednotlivé komponenty z RGB. Vykresnený obrázok bude v jednej figure ako na nasledujúcom obrázku.
 
 ![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu08.png)
+
+### mu09 - Posun
+
+Naimplementujte funkciu ktorá na vstupe vezme RGB obrázok a vráti obrázok kde i-tý stĺpec obrázku je posunutý o i pixelov smerom dole. Pri posune pod hranicu obrázku sa pixely posúvaju zhora. Pre lepšiu predstavu ilustračný obrázok:
+
+
+![Príklad riešenia](https://raw.githubusercontent.com/kocurvik/edu/master/PSO/supplementary/other/mu09.png)
