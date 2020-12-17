@@ -8,7 +8,7 @@ Dohromady je možné za úlohy dostať max. 10 bodov. K bodom za úlohy sa prir�
 
 ## Odovzdávanie
 
-TBA
+Úlohy odovzdávajte ***naraz*** v jednom zipe. Samostatné riešenia úloh budú nazvané mu01.m, mu02.m atď a všetky spolu zazipujte. V prípade, že Vám chýba iba zopár bodov do pripustenia k skúške môžete pár úloh odovzdať pred skúškou a zvyšok po nej. Ak úlohy odovzdáte až po skúške, tak nezabzdnite si potom dať zapísať výslednú známku k predmetu.
 
 ## Úlohy
 
