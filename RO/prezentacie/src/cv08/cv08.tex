@@ -1,0 +1,243 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\title[Validácia, One-Hot]{Rozpoznávanie obrazcov - 8. cvičenie \\ Validácia a One-hot kódovanie}
+\author[Viktor Kocur]{Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{13.4.2020}
+%\titlegraphic{\includegraphics[width=2.7cm]{images/logoFMFI.png}\hspace*{1cm}~%
+%   \includegraphics[width=2.7cm]{images/logoUK.png}
+%}
+
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}[plain]
+  \titlepage  
+\end{frame}
+
+\section{Validácia}
+\begin{frame}
+\frametitle{Rozdelenie dát}
+\begin{block}{Trénovacia množina}
+Doteraz sme vždy operovali s trénovacou množinou. Teda všetky dáta sme použili na nastavenie parametrov modelu.
+\end{block}
+
+\begin{block}{Testovacia množina}
+V prípade, že chceme overiť že náš model je spoľahlivý je nutné odložiť si časť dát na testovanie. Testovacie dáta použijeme až na úplnom konci keď máme model hotový. Používame ich čisto na vyhodnotenie a nie na určenie metódy, alebo parametrov a hyperparametrov modelu.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Rozdelenie dát}
+\begin{block}{Validačná množina}
+Keďže testovaciu množinu nepoužívame na určenie modelu, tak potrebujeme ešte jednu množinu na tento účel. Validačnú množinu používame na určenie správneho prístupu a nastavenie hyperparametrov modelu. 
+\end{block}
+
+\begin{block}{Rozdelenie dát}
+Podiely na rozdelovanie dát záležia od ich charakteru, množstva a modelu. Pri neurónových sieťach potrebujeme veľa trénovacích dát, preto je vhodné využiť split 80/10/10. Pri metódach aké sme si zatiaľ ukázali stačí aj 60/20/20. V niektorých prípadoch však je nutné isť ešte ďalej. Existujú datasety kde je split napr. 40/20/40.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Validácia - postup}
+\begin{block}{Hyperparametre}
+Na validačnej množine určujeme hyperparametre. To sú parametre/nastavenia, ktoré menia spôsob akým sa model trénuje a ako funguje predikcia. Pre SVM je to napr. výber kernelovej funkcie a jej škály. Pre kNN je to napríklad hodnota $k$ a výber metriky. 
+\end{block}
+
+\begin{block}{Validácia}
+Pre rôzne hyperparametre natrénujeme (v prípade kNN len vytvoríme) na trénovacej množine naše modely. Tieto potom otestujeme na validačnej množine.  Použijeme na to nejakú mieru spoľahlivosti. Ideálne presnosť klasifikácie. Na základe výsledkov vyberieme hyperparametre.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Validácia - úloha}
+\begin{block}{Úloha}
+Rozdelte si dáta z predchádzajúceho cvičenia na train/val/test s pomerom 60/20/20. A určite najlepší parameter $k$ pre kNN klasifikátor a metriku na validačnej množine.
+\end{block}
+
+\begin{block}{Pozor na dostatočnú reprezentáciu}
+Často sú dáta zoradené podľa triedy, alebo v nejajek inej pravidelnej forme. Je preto nutné overiť si, či je rozdelenie na train/val/test zmysluplné. Ideálne chceme rovnaký počet tried pre každú množinu. 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vzájomná validácia}
+\begin{block}{Vzájomná validácia}
+Ak máme málo dát tak nedelíme dáta na trénovacie a validačné. Dáta rozdelíme na $n$ približne rovnakých podmnožín. Model vždy natrénujeme na dátach zo všetkých okrem jednej podmnožiny a otestujeme na jednej podmnožine. Toto opakujeme $n$ krát a výsledok spriemerujeme.
+\end{block}
+
+\begin{block}{Matlab}
+\begin{verbatim}
+Mdl = fitcknn(X, y, 'NumNeighbors', k);
+CVMdl = crossval(Mdl)
+loss = kfoldLoss(CVMdl) \end{verbatim}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Vzájomná validácia}
+\begin{block}{Automatické určenie hyperparametrov}
+Matlab pri väčšine fitc... funkcií dokáže nájsť optimálne hyperparametre sám. Ak to budete používať je dobre pozrieť sa do helpu.
+\end{block}
+
+\begin{block}{Matlab}
+\begin{verbatim}
+Mdl = fitcknn(X,Y,'OptimizeHyperparameters','auto')\end{verbatim}
+\end{block}
+\end{frame}
+
+
+\section{One-hot kódovanie}
+
+\begin{frame}
+\frametitle{Kategorické dáta}
+
+\begin{block}{Kategorické dáta}
+Niekedy dostaneme dáta v tzv. kategorickej forme. Teda jeden z príznakov môže byť len z nejakej konečnej množiny možností. Napr. áno/nie, študent/pracujúci/dôchodca/nezamestnaný atď. Niektoré metódy ktoré sme si zatiaľ ukázali nevedia s takýmito dátami pracovať. Konkrétne ide o Lineárny klasifikátor/SVM. kNN v Matlabe dokáže operovať s kategorickými premennými pomocou špeciálnej metriky, ale je nutné to nastaviť.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problém s jednoduchou konverziou}
+
+\begin{block}{Prečo nepoužiť numerické dáta vždy}
+Jeden jednoduchý spôsob konverzie z kategorických dát na numerické by bolo, že prekonvertujeme dáta na numerické, tak že postupne priradíme každej kategórii číslo. To však nieje vhodný postup. Jeden z dôvodov je, že napríklad ak napríklad máme kategórie chodec, cyklista, motorka, auto, dodávka, kamión. A priradíme im čísla chodec:0, cyklista:1, ... kamíon:5. Tak by nám vyšlo, že priemer kamióna a cyklistu je auto, čo nedáva zmysel. Takýto postup by však mal zmysel na príklad v situácii ak máme katogórie ako známky A/B/C/D/E/Fx. U nich totiž približne platí, že C je priemer B a D atď.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot kódovanie}
+\begin{block}{One-hot kódovanie}
+Aby sme sa vyhli problému z predchádzajúceho slidu, tak použijeme tzv. one-hot kódovanie. Každý kategorický príznak, ktorý ma $m$ možných hodnôt transformujeme na príznakový vektor dĺžky $m$, tak že každý prvok vektoru bude korešpondovať jednej kategórii a nastavíme ho ako 1 ak v pôvodnom zápise ma príklad danú kategóriu. Ostatné prvky nastavíme na nula. Takže napríklad ak máme dáta v tvare rýchlosť a typ auta: (20, cyklista), (58, auto), tka nám vzniknú vektory: (20, 0, 1, 0, 0, 0, 0) a (58, 0, 0, 0, 1, 0, 0).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot kódovanie Matlab}
+\begin{block}{dummyvar}
+d = dummyvar(c) - vráti one-hot kódovanie pre stĺpec kategorických príznakov c
+\end{block}
+
+\begin{block}{categorical}
+c = categorical(r) - categorical vŕati keategorický dátový typ pre vektor r. Používame najmä na konverziu z cell štruktúry do categorical.
+\end{block}
+
+\begin{block}{categories}
+cats = categories(c) - vráti kategórie v kategorickom vektore c. 
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot kódovanie Matlab}
+\begin{block}{load patients}
+Načítajte si dáta kardiologigkých pacientov pomocou load patients.
+\end{block}
+
+\begin{block}{Úloha}
+Prekonvertujte kategorické príznaky na one-hot kódovanie a natrénujte na datasete SVM. Informáciu o mene a nemocnici nepoužívajte. Cieľom predikcie bude určiť, či je pacient fajčiar.
+\end{block}
+\end{frame}
+
+\end{document}

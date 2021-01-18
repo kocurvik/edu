@@ -1,0 +1,234 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\title[Stromy]{Pattern recognition - 9th lab \\ Naive Bayes}
+\author[Viktor Kocur]{Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{21.4.2020}
+%\titlegraphic{\includegraphics[width=2.7cm]{images/logoFMFI.png}\hspace*{1cm}~%
+%   \includegraphics[width=2.7cm]{images/logoUK.png}
+%}
+
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}[plain]
+  \titlepage  
+\end{frame}
+
+\section{Naivný Bayes}
+
+\begin{frame}
+\frametitle{Bayes equation}
+\begin{block}{Bayes equation}
+We will use the Bayes equation:
+\begin{equation}
+P(\omega_i | \vec{x}) = \frac{P(\vec{x}|\omega_i) P(\omega_i)}{P(\vec{x})}
+\end{equation}
+\end{block}
+
+\begin{block}{Naive Bayes}
+Our classifier is naive and assumes that features are independent:
+\begin{equation}
+P(\vec{x}|\omega_i) = \prod_{k} P(x_k | \omega_i)
+\end{equation}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Classifier}
+\begin{block}{Classifier}
+We classify by finding the class with the highest probability:
+\begin{align}
+pred_i &= \argmax_i \left( \frac{P(\vec{x}|\omega_i) P(\omega_i)}{P(\vec{x})} \right) \\
+          &= \argmax_i \left(P(\vec{x}|\omega_i) P(\omega_i) \right) \\
+          &= \argmax_i \left(P(\omega_i) \prod_{k} P(x_k | \omega_i) \right)
+\end{align}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Classifier}
+\begin{block}{Calculating values}
+We assume categorical features. Therefore for each $k$ the $x_k$ can only have finitely many values. Let us have a training set of size $N$. We denote the amount of elements in the category $\omega_i$ as $N_i$ and the amount of elements which are in the category $\omega_i$ for the $k$-th feature which has value of $v$ as $N_{i,k,v}$. We can then define:
+\begin{gather}
+P(\omega_i) = \frac{N_i}{N} \\
+P(x_k = v | \omega_i) = \frac{N_{i,k,v}}{N_i} 
+\end{gather}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Classifier}
+\begin{columns}[onlytextwidth,T]
+
+
+  \column{70mm}
+  \includegraphics[width=70mm]{table.png}
+  
+  \column{30mm}
+  \begin{block}{Exercise}
+  Calculate which class would a client with random features belong to according to naive bayes.
+  \end{block}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Classifier}
+\begin{block}{Numerical features}
+In case that the feature is numeric we cannot apply the calculation from the previous slide. We will therefore need to estimate the probability $P(x_k | \omega_i)$ by some distribution function.
+\end{block}
+
+\begin{block}{Parametric methods}
+If we use a parametric method we select a distribution and fit its parameters to the data.
+\end{block}
+
+\begin{block}{Non-parametric methods}
+We can also create a distribution function which is calculated based on the points in the training set in the neigborhood of the point we are interested in.
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Matlab}
+\begin{block}{fitcnb}
+Mdl = fitcnb(T,'column\_name') - retursn a naive Bayes classifier for the table T and classification target in the column column\_name.
+\end{block}
+
+\begin{block}{Malab - Table type}
+Working with tables: \\
+\url{https://www.mathworks.com/help/matlab/tables.html}\\
+\vspace{1em}
+This is the most important part for us:
+\url{https://www.mathworks.com/help/matlab/matlab_prog/access-data-in-a-table.html}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Naive Bayes on table data}
+
+\begin{block}{Na dátach}
+\begin{verbatim}
+load census1994
+Mdl = fitcnb(adulddata, 'salary');\end{verbatim}
+\end{block}
+
+\begin{block}{Exercise}
+Determine the accuracy of the classifier by using Mdl.predict on the table adulttest and compare the results.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Matlab}
+\begin{block}{fitcnb}
+Mdl = fitcnb(X,y) - returns naive Bayes classifier for non-table data.
+\end{block}
+
+\begin{block}{Exercise}
+Test the naive Bayes classifier on the fisheriris database.
+\end{block}
+
+\begin{block}{Exercise}
+Use the data from the 6th lab and display the classification boundary using your modified version of showSVM from the same lab.
+\end{block}
+\end{frame}
+
+\end{document}

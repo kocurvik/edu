@@ -1,0 +1,246 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\title[Validácia, One-Hot]{Pattern Recognition - 8th lab \\ Validation and one-hot encoding}
+\author[Viktor Kocur]{Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{13.4.2020}
+%\titlegraphic{\includegraphics[width=2.7cm]{images/logoFMFI.png}\hspace*{1cm}~%
+%   \includegraphics[width=2.7cm]{images/logoUK.png}
+%}
+
+
+\begin{document}
+\selectlanguage{american}
+
+\begin{frame}[plain]
+  \titlepage  
+\end{frame}
+
+\section{Validation}
+\begin{frame}
+\frametitle{Splitting the data}
+\begin{block}{Training set}
+So far we have only worked with the training set. In other words we used all of our data to set the model parameters.
+\end{block}
+
+\begin{block}{Test set}
+If we want to show that our model is reliable it is necessary to save some data for testing. The testing data are used at the very end when our model has been fit. We use them just for evaluation and not for selecting the method, its parameters or hyperparameters.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data split}
+\begin{block}{Validation set}
+Since the test set is not used to choose the method etc. we need to separate one more set for this purpose. The validation set is used to choose the optimal method and its hyperparameters.
+\end{block}
+
+\begin{block}{Data split}
+Data splits are based on the amount and type of data as well as the selected model. With neural nets we need a lot of training data therefore common splits are 80/10/10. With other methods 60/20/20 is sufficient. Some datasets have a predetermined split of 40/20/40.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Validation}
+\begin{block}{Hyperparameters}
+We select the hyperparamters on the validation set. These are paramters/settings which change how the model is trained and how the prediction works. For SVM this can be the choice of kernel function and its scale. For kNN it is for example the $k$ value or the selected metric.
+\end{block}
+
+\begin{block}{Validation}
+We train our model with various parameters (we just build the model in case of kNN) on the training set. We test these models on the validation set. We select some metric of reliability such as classification accuracy. Based on the results we select the hyperparameters. 
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Validation - exercise}
+\begin{block}{Exercise}
+Split the data from the previous lab to train/val/test with 60/20/20 split. Choose the best $k$ parameters for the kNN classifier and the best metric.
+\end{block}
+
+\begin{block}{Sound representation}
+Sometimes the data is ordered by class or in some other regular form. It is therefore necessary whether the split is meaningful. Ideally we want the same amount examples for each class in the set.
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Cross-validation}
+\begin{block}{Cross-validation}
+If we do not have enough data we do not split the data into training and validation sets. We split the data into $n$ approximately similar subsets. We then train the model on all but one of the subsets and use the remaining set as the validation set. We repeat this process $n$ times and select our hyperparameters based on their average.
+\end{block}
+
+\begin{block}{Matlab}
+\begin{verbatim}
+Mdl = fitcknn(X, y, 'NumNeighbors', k);
+CVMdl = crossval(Mdl)
+loss = kfoldLoss(CVMdl) \end{verbatim}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Automating validation}
+\begin{block}{Automatic hyperparameter selection}
+Matlab is able to find the optimatl hyperparameters for most of the fitc.. functions. If you choose to use this make sure you check the help so you know what your selected hyperparameters mean.
+\end{block}
+
+\begin{block}{Matlab}
+\begin{verbatim}
+Mdl = fitcknn(X,Y,'OptimizeHyperparameters','auto')\end{verbatim}
+\end{block}
+\end{frame}
+
+
+\section{One-hot encoding}
+
+\begin{frame}
+\frametitle{Categorical data}
+
+\begin{block}{Categorical data}
+Sometimes we get data in a categorical form: one of the features comes from a finite set of possibilities. For example yes/no, or student/working/unemployed/retired. Some methods we have used cannot use these kinds of data. Specifically SVM and Linear classifier cannot. kNN in Matlab is able to work with categorical data using a special metric, but it is necessary to set it up.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problem with simple conversion}
+
+\begin{block}{Why not do a sipmle conversion}
+There is a simple way to convert the data by giving each categorical value a number. This is not ideal. One of the reasons is that for example if we have categories pedestrian:0, bicycle:1, motorcycle:2, car:3, van:4, truck:5. Then an average of a truck and motorcycle is a car, which is not meaningful. However we can sometimes use this approach for data such as grades: A, B, C, D, E, Fx, where we expect an average of B and D to be a C.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot encoding}
+\begin{block}{One-hot encoding}
+To avoid the probles of the previous slide we can use so-called one-hot encoding. We convert every categorical feature with $m$ different categories into a feature vector of size $m$, so that every element of the vector corresponds to one category. We set this element to 1 and all of the rest to 0. So for example if we had data with speeds and categories of vehicles (20, bicycle), (58, car) we would obtain vectors  (20, 0, 1, 0, 0, 0, 0) and (58, 0, 0, 0, 1, 0, 0).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot endoding Matlab}
+\begin{block}{dummyvar}
+d = dummyvar(c) - returns one-hot encoding for a categorical column vector c
+\end{block}
+
+\begin{block}{categorical}
+c = categorical(r) - returns a categorical type for a vector r. We use it mostly to convert from cell type to categorical.
+\end{block}
+
+\begin{block}{categories}
+cats = categories(c) - returns the categories from the categorical vector c. 
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{One-hot kódovanie Matlab}
+\begin{block}{load patients}
+Load the data of cardiology patients using load patients.
+\end{block}
+
+\begin{block}{Exercise}
+Convert categorical features to one-hot encoding and train an SVM. Do not use the name and the hospital information. The goal for prediction is whether the patient is a smoker.
+\end{block}
+\end{frame}
+
+
+
+
+\end{document}
