@@ -17,3 +17,4 @@ Domáce úlohy budú zadané v priebehu semestra. Body za aktivitu je možné z�
 * cv02 - nájdenie motyl3 v obrázku motyle
 * cv03 - porovnanie vzdialeností pre histogram kvantizovaných farieb pre obrázky hrib.jpg, bobule.jpg a mach.jpg 
 * cv04 - zobraziť akumulačný priestor pre obrázky ciara a ciary, zobraziť aspoň dva rôzne gaborove filtre, zobraziť amplitúdu odozvy po aplikácii gáborových filtrov
+* cv05 - úloha na blending
