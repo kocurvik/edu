@@ -20,3 +20,4 @@ Domáce úlohy budú zadané v priebehu semestra. Body za aktivitu je možné z�
 * cv05 - úloha na blending
 * cv06 - dokončiť úlohu bez gaborovych filtrov (po stranu 7)
 * cv07 - zobraziť rohy alebo ohraničenie knížky (viď slide 10)
+* cv08 - zobraziť maticu zámen pre aspoň jeden natrénovaný model
