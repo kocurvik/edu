@@ -23,3 +23,4 @@ Domáce úlohy budú zadané v priebehu semestra. Body za aktivitu je možné z�
 * cv08 - zobraziť maticu zámen pre aspoň jeden natrénovaný model
 * cv09 - dokončiť úlohu na počítanie chodcov pre ACF detektor 
 * cv10 - implementovať RANSAC
+* cv11 - implementovať počítanie chodcov
