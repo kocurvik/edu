@@ -1,0 +1,182 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+
+
+\title[2. Úloha]{Advanced Image Processing - Homework - Segmentation}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{27.11.2018}
+
+\begin{document}
+\selectlanguage{american}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Assignment}
+\begin{block}{Goal}
+The goal of this task is to test different segmentation methods and describe the steps you used in a pdf file.
+\end{block}
+
+\begin{block}{Output}
+The output of your work will be a pdf file with a description of your approach and the results as well as the code you used.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data}
+\begin{block}{Dataset}
+\href{https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/dataset/images.html}{The Berkeley Segmentation Dataset and Benchmark}
+\end{block}
+
+\begin{block}{Images}
+Pick 3 images from this dataset. The dataset also contains ground truth, but you will also create a hand made label for one of the images (you can use matlab segmenter app). Segmenting only one foreground object per image is sufficient for this assignment.
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Segmentation}
+
+\begin{block}{Three methods}
+Use k-means, graph cut and color-based segmentation to segment the image. Try to tune the parameters of your approach so the result is the best possible. Use all three methods for each image.
+\end{block}
+
+\begin{block}{Testing}
+To test your results you will use the image you segmented manually and the ground truth from the dataset. For each image and each method you will be required to calculate the IoU metric, which is defined as the ratio of the intersection of the two masks (in pixels) and the union of them (also in pixels).
+\end{block}
+
+\begin{alertblock}{Note}
+Easiest way to compute the IoU metric is to use logical operations.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Submission}
+\begin{block}{Submission}
+Send the pdf file, chosen images, your own ground truth mask and the scripts you used for k-means, color-based segmentation and IoU metric calculation to kocurvik@gmail.com Try to make scripts readable.
+\end{block}
+
+\begin{block}{Grading}
+The grades will be given based on description of your approach, results and correctness of your code. You can get a maximum of 7.5 points. The deadline is 12.12. 23:59. Each day of late submission is worth -1.5 points.
+\end{block}
+\end{frame}
+\end{document}

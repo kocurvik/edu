@@ -1,0 +1,186 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+
+
+\title[2. Úloha]{Pokročilé spracovanie obrazu - Úloha - Segmentácia}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{3.12.2020}
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Zadanie}
+\begin{block}{Cieľ}
+Cieľom úlohy je otestovať si segmentačné metódy a popísať postupy ktoré ste použili v pdf súbore.
+\end{block}
+
+\begin{block}{Výstup}
+Výstupom vašej práce bude pdf súbor s popisom vášho postupu a výsledkami a kód ktorý ste použili na dosiahnutie týchto výsledkov.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dáta}
+\begin{block}{Dataset}
+\href{https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/dataset/images.html}{The Berkeley Segmentation Dataset and Benchmark}
+\end{block}
+
+\begin{block}{Obrázky}
+Vyberte si 3 obrázky z tohoto datasetu. K datasetu je aj ground truth. Pre jeden obrázok si ju stiahnite a vďaka nej si spravte ručne (v matlab image segmenter appke) segmentáciu nejakého objektu.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Segmentácia}
+
+\begin{block}{Tri metódy}
+Pre každý obrázok použite k-means, graph cut a segmentáciu na základe farby na vytvorenie segmentovaného obrázku, buď úplného, alebo len nejakého objektu.  Pohrajte sa s parametrami. Popíšte v pdfku ako ste postupovali a pridajte doň aj obrázky s (medzi) výsledkami. Pre každý obrázok musíte použiť všetky tri metódy.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Segmentácia}
+
+\begin{block}{Porovnanie}
+Na porovananie výsledkov použijete ručne segmentovaný obrázok a segmentáciu podľa datasetu. Pre každú z metód vypočítajte tzv. IoU metriku. Tá sa počíta ako podiel medzi obsahom prieniku segmentovanej oblasti a ground truth segmentácii a obsahom ich zjednotenia.
+\end{block}
+
+\begin{alertblock}{Pozn}
+IoU metriku počítajte po pixeloch. Najjednoduchšie je využiť logické operácie.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Odovzdávanie}
+\begin{block}{Odovzdávanie}
+Odošlite pdf súbor, vybraté obrázky, ručnú segmentáciu a vami použité skripty pre k-means a segmentáciu na základe farby ako aj výpočet IoU metriky na kocurvik@gmail.com Skripty skúste spraviť, tak aby sa zakomentovaním/odkomentovaním dali skontrolovať postupy pre rôzne obrázky.
+\end{block}
+
+\begin{block}{Bodovanie}
+Pri bodovaní sa bude prihliadať na dostatočný popis postupu, výsledky a správnosť odoslaného kódu. Maximálne sa dá získať 7.5 boda. Deadline 12.12. 23:59 je  Za každý deň meškania je -1.5 boda.
+\end{block}
+\end{frame}
+\end{document}

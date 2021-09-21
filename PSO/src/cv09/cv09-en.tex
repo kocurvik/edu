@@ -1,0 +1,288 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+\title[9. cvičenie]{Advanced Image Processing - Fourier transformation}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{20.11.2019}
+
+\begin{document}
+\selectlanguage{american}
+
+
+\begin{frame}
+
+  \titlepage
+
+\end{frame}
+
+\section{Fourier transformation}
+
+\subsection{Fundamentals}
+
+\begin{frame}
+\frametitle{Discrete Fourier transformation - 1D} 
+  \begin{block}{Definition}    
+    $$F_k = \mathscr{F}[ \vec{f}]_k = \sum_{n = 0}^{N - 1} f_n \cdot e^{\frac{-2 \pi i n k}{N}}$$
+  \end{block}
+
+  \begin{block}{Inverse}
+    $$f_n = \mathscr{F}^{-1}[\vec{F}]_n = \frac{1}{N} \sum_{k = 0}^{N - 1} F_k \cdot e^{\frac{2 \pi i n k}{N}}$$
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{2D FFT in Matlab} 
+
+\begin{block}{fft2}
+fft2(I) - returns the Fourier transform of grayscale image I.
+\end{block}
+
+\begin{block}{ifft2}
+ifft2(F) - returns the inverse Fourier transform of F.
+\end{block}
+
+\begin{block}{fftshift}
+fftshift(fft2(I)) - shifts the output of fft2 so that the zero-frequency is in the middle of the image. Calling this twice returns the original F.
+\end{block}
+
+\begin{block}{Úloha}
+Display the Fourier transform of zatisie.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Complex numbers}
+  
+  \begin{alertblock}{Problem I - Complex numbers}
+    FFT in matlab returns complex numbers! IFFT also returns complex numbers. We therefore have to learn how to work with them.
+  \end{alertblock}
+  
+  \begin{block}{Working with complex numbers}
+  \begin{itemize}
+  \item i, j - constants representing the complex number - watch out for shadowing
+  \item real(c) - real part of the complex number c
+  \item imag(c) - imaginary part of the complex number c
+  \item abs(c) - absolute value of the number c
+  \item angle(c) - angle of the complex number c
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Exercise} 
+
+  \begin{alertblock}{Problem II}
+    It is necessary to work in double and deal with the fact that the values of transform are too big in the middle.
+  \end{alertblock}
+
+  \begin{block}{Display function as a solution}
+  \begin{verbatim}
+function F = zobrfft(I)
+    F = fftshift(fft2(im2double(I)));
+    imagesc(log(abs(F)+1));
+    colormap(gray);
+end \end{verbatim}
+  \end{block}    
+    
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Exercise} 
+
+  \begin{block}{Exercise}
+    Display the absolute values of Fourier transform for the images pruhyhoriz.pgm, pruhyvert.pgm, pruhysikme.pgm, zatisie.pgm, boat.pgm, waveboat.pgm. Display the angles for some of them.
+  \end{block}
+  
+    \begin{block}{Úloha}
+    Transform the image boat, use the inverse transform, but only keep the information about the angle or information about the absolute value, or just the real part and just the imaginary part. Try to keep only one of the quadrants of the transformed image and display the image after inverse transform.
+  \end{block}  
+\end{frame}
+
+\subsection{Spectral domain filtration}
+
+\begin{frame}
+\frametitle{Spectral domain filtration - fundamentals}
+  \begin{block}{Positions of the frequencies in the spectral domain}
+    In the spectral domain (after transformation) the lower frequencies are closer to the center and higher ones are at the edges.
+  \end{block}
+  
+  \begin{block}{Meaning}
+    High frequencies carry details. If we only keep the high frequencies we will obtain mostly edges. If we only keep the low frequencies we will get a blurred image.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideal highpass a lowpass}
+  \begin{block}{Highpass}
+    We transform the image and set the low frequencies to zero and then we perform the inverse transform.
+  \end{block}
+  
+  \begin{block}{Lowpass}
+    The same process but with high frequencies.
+  \end{block}
+  
+  \begin{block}{Cut-off frequency}
+    We call the frequency at which we set our limit the cut-off frequency
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Butterworth filter}
+  \begin{block}{Butterworth filter}
+  \begin{equation*}
+    H = \frac{1}{1+\left(\sqrt{2} - 1\right) \left(\frac{D}{D_0}\right)^{2n}}
+  \end{equation*}
+  D is the Euclidian distance from the center.
+  \end{block}
+
+  \begin{block}{Function for the butterworth filter}
+    Open the butterhigh.m from the zip file.
+  \end{block}
+  
+  \begin{block}{Úloha}
+    Display this filter using imagesc. Use this filter on some image in the spectral domain. Modify the function so we can use it for lowpass filtering.
+  \end{block}    
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideal highpass and lowpass}
+  \begin{block}{Úloha}
+  Create functions which generate the ideal lowpass and ideal highpass filters. You can use parts of butterhigh.m.
+  \end{block}
+  
+  \begin{block}{Exercise}
+  Apply filters with various cut-off frequencies on boat.pgm and zatisie.pgm.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Filtration of periodic noise}
+  \begin{block}{Periodic noise}
+  Periodic noise can be seen in the spectral domain as a pair or multiple pairs of areas with higher amplitude. We can therefore use change the representation in the spectral domain and perform the inverse transformation. This will suppress the noise in the original image.
+  \end{block}
+  
+  \begin{block}{Exercise}
+  Suppress the noise the images tree.png, waveboat.pgm and periodic.png.
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

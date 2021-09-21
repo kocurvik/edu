@@ -1,0 +1,286 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+\newcommand*\mean[1]{\bar{#1}}
+
+\newcommand*{\Z}{\mathbb{Z}}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+
+
+\title[7. cvičenie]{Pokročilé spracovanie obrazu - Morfologické operácie}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{6.11.2018}
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Morfologické operácie}
+\subsection{Erózia a Dilatácia}
+
+\begin{frame}
+\frametitle{Definície}
+  \begin{block}{Definícia - binárny obraz}
+  Máme mriežku $E \subseteq \Z^d$. V rámci nej máme podmnožinu bodov $A$, takáto podmnožina je binárny obraz.
+  \end{block}
+  
+  \begin{block}{Definícia - štruktúrny element}
+  Štruktúrny element $B$ je taktiež binárny obraz, teda $B \subseteq E$. Vieme ho ale posúvať a to značíme ako $B_z = \{b + z | b \in B\}$ pre $\forall z \in E$.
+  \end{block}
+
+  \begin{block}{Definícia - erózia}
+  Erózia $A \ominus B = \{z \in E | B_z \subseteq A \}.$
+  \end{block}
+  
+  \begin{block}{Definícia - dilatácia}
+  Dilatácia $A \oplus B = \bigcup_{a \in A} B_a$
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Intuitívne fungovanie} 
+\noindent\makebox[\textwidth]{\includegraphics[width=0.5\linewidth]{triangle.jpg}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Matlab} 
+  \begin{block}{strel}
+  SE = strel(name, params) - vráti štruktúrny element podľa mena s parametrami. Mená sú 'diamond', 'disk', 'line', 'octagon', 'rectangle' a 'square'.
+  \end{block}
+    
+  \begin{block}{imerode}
+  imerode(I,SE) - vráti eróziu binárneho obrazu I štruktúrnym elementom SE. Funguke aj na grayscale, to ale na budúcom cviku.
+  \end{block}
+  
+    \begin{block}{imdilate}
+  imdilate(I,SE) - vráti dilatáciu binárneho obrazu I štruktúrnym elementom SE. Funguje aj na grayscale, to ale na budúcom cviku.
+  \end{block}
+  
+  \begin{block}{Úloha}
+  Na obrázku jeden.jpg otestujte dilatáciu a eróziu s rôznymi SE.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vlastnosti}
+  \begin{block}{Komutatívnosť}
+  $A \oplus B = B \oplus A$ 
+  \end{block}
+    
+  \begin{block}{Asociatívnosť}
+  $A \oplus (B \oplus C) = (A \oplus B) \oplus C$ 
+  \end{block}
+  
+  \begin{block}{Invariancia voči posunu}
+  $A \oplus B_z = (A \oplus B)_z$
+  \end{block}
+  
+  \begin{block}{Dualita}
+  Erózia a dilatácia sú vzájomne duálne. Teda erózia obrazu je to isté ako dilatácia pozadia a naopak.
+  \end{block}
+\end{frame}
+
+
+\subsection{Otvorenie a zatvorenie}
+
+\begin{frame}
+\frametitle{Definície - otvorenie a uzavretie}
+  \begin{block}{Definícia - uzavretie}
+  Uzavretie A štruktúrnym elementom B je $(A \oplus B) \ominus B$. Uzavretie napríklad zaplní v binárnom obraze diery.
+  \end{block}
+  
+  \begin{block}{Definícia - otvorenie}
+  Otvorenie A štruktúrnym elementom B je $(A \ominus B) \oplus B$. Otvorenie odstraňuje malé objekty napríklad šum z obrazu.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Matlab - otvorenie a uzavretie}
+  \begin{block}{imopen}
+  imclose(I, SE) - vráti uzavretie obrazu I štruktúrnym elementom SE
+  \end{block}
+  
+  \begin{block}{imopen}
+  imopen(I, SE) - vráti otvorenie obrazu I štruktúrnym elementom SE
+  \end{block}  
+  
+  \begin{block}{regionprops}
+  s = regionprops(BW, 'Centroid') - vráti štruktúru obsahujúcu pre pole Centroid výstup pre stredy nájdených objektov v binárnom obraze BW.
+  \end{block} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Úloha}
+  \begin{block}{Úloha}
+  Použite morfologické operácie a spočítajte v obrázkoch connected.png a lines\_and\_circles.png kruhy.
+  \end{block}  
+  
+  \begin{block}{Úloha}
+  Použite adaptívne prahovanie, filtráciu a morfologické operácie a spočítajte v obrázku Kruhy.jpg veľké kruhy.
+  \end{block}  
+  
+  \begin{block}{Úloha}
+  Použite morfologické operácie a odstráňte artefakty z obrázku fingerprint.png.
+  \end{block}
+  
+  \begin{block}{Úloha}
+  Použite morfologické operácie a nájdite diery v plote v obrázku fence.png.
+  \end{block}
+\end{frame}
+
+
+\subsection{Morfológia a hrany}
+
+\begin{frame}
+\frametitle{Hrany}
+  \begin{block}{Detekcia hrán}
+  Pomocou morfologických operácii môžeme nájsť hrany objektov. Hrany pre binárny obraz $I$ nájdeme ak realizujeme jednu z logických operácii $I \neq I \ominus SE$, $I \neq I \oplus SE$, alebo $I \ominus SE \neq I \oplus SE$.
+  \end{block}    
+  
+  \begin{block}{Úloha}
+  Nájdite hrany v obrázku motyle.png. Skúste rôzne štruktúrne elementy.
+  \end{block}    
+\end{frame}
+
+\subsection{Hit-miss}
+\begin{frame}
+\frametitle{Hit-miss}
+  \begin{block}{Hit-miss}
+  Hit-miss transformuje obraz pomocou dvoch štruktúrnych elementov tak, že $HM = I \ominus SE_1 \cap (E / I) \ominus SE_2$. Teda ostanú tie pixely kam sa $SE_1$ 'zmestí' a $SE_2$ nie.
+  \end{block}    
+  
+  \begin{block}{bwhitmiss}
+  bwhitmiss(BW, SE1, SE2) - Vráti Hit-miss podľa definície
+  \end{block}   
+  
+  \begin{block}{bwhitmiss}
+  bwhitmiss(BW, interval) - Vráti to isté ako bwhitmiss(BW, interval == 1, interval == -1)
+  \end{block}   
+  
+  \begin{block}{Úloha}
+  Nájdite rohy v obrázku boxes.png pomocou Hit-miss.
+  \end{block}   
+  
+   
+\end{frame}
+
+
+\end{document}

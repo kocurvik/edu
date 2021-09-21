@@ -1,0 +1,183 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+\title[1. Úloha]{Pokročilé spracovanie obrazu - Úloha - GUI Hrany}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{30.10.2019}
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Zadanie}
+\begin{block}{GUI}
+Cieľom úlohy je vytvoriť GUI, v ktorom bude možné načítať obrázok, zašumieť ho, vyhladiť ho a detekovať v ňom hrany.
+\end{block}
+
+\begin{block}{Špecifikácia}
+Po načítaní obrázku bude zobrazený v axes. Všetky zmeny (zašumenie a hladenie) sa prejavia na zobrazenom obrázku. Výsledok po detekcii hrán sa zobrazí vedľa obrázka v samostatnom axes.
+\end{block}
+
+
+\begin{block}{Reset button}
+Pridajte button, ktorý umožní zrušiť doterajšie úpravy načítaného obrázka (zobrazí ho znova, bez toho aby ho uživateľ musel hľadať v súboroch).
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Šum}
+\begin{block}{Sol a korenie (Impulzný šum)}
+Na pridanie šumu bude v GUI umiestnený button. Bude sa dať (napr. sliderom, textboxom) upraviť miera šumu pomocov dvoch prvkov jeden pre biely a čierny šum.
+\end{block}
+
+\begin{block}{Gaussovský aditívny šum}
+Pre gaussovský šum bude taktiež button a bude sa dať určiť nejakým prvkom hodnota sigma.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vyhladzovanie a Hrany}
+
+\begin{block}{Mediánová filtrácia}
+Pridajte button na mediánovú filtráciu. 
+\end{block}
+
+\begin{block}{Gaussovské vyhladzovanie}
+Pridajte button na gaussovské vyhladenie. Pridajte prvok, tak aby sa dala určiť sigma.
+\end{block}
+
+\begin{block}{Hrany}
+Vytvorte gui prvok (buttongroup + radio button, alebo pop-up menu) ktorým bude možné vybrať si metódu detekcie hrán zo Sobel, Prewitt, Roberts a Canny. Pridajte button ktorým sa daná metóda použije a výsledok sa zobrazí vedľa načítaného obrázku.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Odovzdávanie}
+\begin{block}{Odovzdávanie}
+Odovzdajte vami vytvorené .m a .fig súbory v zipe vo formáte priezvisko.zip. Odošlite ho na adresu kocurvik@gmail.com s predmetom PSO - DU1. Deadline je 17.11.2020 o 23:59. Úloha je na 7.5 boda. Za každý deň meškania -1.5 boda.
+\end{block}
+
+\begin{block}{Bodovanie}
+Pri bodovaní sa bude prihliadať aj na rozloženie a logiku UI prvkov. Dajte si pozor na to, aby napríklad pri možnostiach volenia rôznych hodnôt bolo možné zvoliť také hodnoty ktoré sú pre danú veličinu relevantné a aby bolo jasné o aké hodnoty sa jedná v ktorom prípade. Namiesto funkcií ktoré sme si robili môžete použiť aj 'hotové' matlabovské funkcie, ale dajte si pozor aby ich parametre korešpondovali s našou definíciou.
+\end{block}
+\end{frame}
+\end{document}

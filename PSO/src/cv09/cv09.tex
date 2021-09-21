@@ -1,0 +1,288 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+\title[9. cvičenie]{Pokročilé spracovanie obrazu - Fourierová transformácia}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{20.11.2019}
+
+\begin{document}
+\selectlanguage{slovak}
+
+
+\begin{frame}
+
+  \titlepage
+
+\end{frame}
+
+\section{Fourierová transformácia}
+
+\subsection{Matematické základy}
+
+\begin{frame}
+\frametitle{Diskrétna Fourierová transformácia - 1D} 
+  \begin{block}{Definícia}    
+    $$F_k = \mathscr{F}[ \vec{f}]_k = \sum_{n = 0}^{N - 1} f_n \cdot e^{\frac{-2 \pi i n k}{N}}$$
+  \end{block}
+
+  \begin{block}{Inverzne}
+    $$f_n = \mathscr{F}^{-1}[\vec{F}]_n = \frac{1}{N} \sum_{k = 0}^{N - 1} F_k \cdot e^{\frac{2 \pi i n k}{N}}$$
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{2D FFT v matlabe} 
+
+\begin{block}{fft2}
+fft2(I) - Vráti Fourierovú transformáciu šedotónového obrazu I.
+\end{block}
+
+\begin{block}{ifft2}
+ifft2(F) - vráti inverznú Fourierovú transformáciu obrazu F.
+\end{block}
+
+\begin{block}{fftshift}
+fftshift(fft2(I)) - Vráti Fourierovú transformáciu obrazu šedotónového obrazu I, tak že nulová frekvencia bude v strede obrazu.
+\end{block}
+
+\begin{block}{Úloha}
+Skúste si zobraziť Fourierovú transformáciu zátišia.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Komplexné čísla}
+  
+  \begin{alertblock}{Problém I - Komplexné čísla}
+    FFT v matlabe vracia komplexné čísla! IFFT vracia komplexné čísla tiež. Musíme sa preto naučiť pracovať s komplexnými číslami.
+  \end{alertblock}
+  
+  \begin{block}{Práca s komplexnými číslami}
+  \begin{itemize}
+  \item i, j - konštanty reprezentujúce komplexné číslo - nedá sa použiť ak máme definované premenné s rovnakým menom
+  \item real(c) - reálna časť komlexného čisla c
+  \item imag(c) - imaginárna časť komlexného čísla c
+  \item abs(c) - absolútna hodnota komlexného čísla c
+  \item angle(c) - uhol komplexného čísla c
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Úloha} 
+
+  \begin{alertblock}{Problém II}
+    Potreba pracovať v double, komplexné čísla, fftshift, hodnoty transformácie sú príliš veľké v (0,0)!
+  \end{alertblock}
+
+  \begin{block}{Funkcia ako riešenie}
+  \begin{verbatim}
+function F = zobrfft(I)
+    F = fftshift(fft2(im2double(I)));
+    imagesc(log(abs(F)+1));
+    colormap(gray);
+end \end{verbatim}
+  \end{block}    
+    
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Úloha} 
+
+  \begin{block}{Úloha}
+    Zobrazte si absolútne hodnoty fourierovej transformácie obrázkov pruhyhoriz.pgm, pruhyvert.pgm, pruhysikme.pgm, zatisie.pgm, boat.pgm, waveboat.pgm. Pre niektoré obrázky zobrazte fázy fourierovej transformácie.
+  \end{block}
+  
+    \begin{block}{Úloha}
+    Obrázok boat.pgm transformujte a potom použite inverznú transformáciu, ale využite len informáciu o fáze, alebo len informáciu o absolútnej hodnote, len reálnu časť, alebo len imaginárnu. Skúste v transformovanom obraze zachovať iba jeden z kvadrantov a takýto obraz inverzne transformovať.
+  \end{block}  
+\end{frame}
+
+\subsection{Filtrácia v spektrálnej oblasti}
+
+\begin{frame}
+\frametitle{Filtrácia v spektrálnej oblasti - princíp}
+  \begin{block}{Rozloženie frekvencií v matici po transformácii}
+    V spektrálnej oblasti (po transformácii) sú nižšie frekvencie bližsie pri strede a vyššie na okrajoch.
+  \end{block}
+  
+  \begin{block}{Význam}
+    Vysoké frekvencie predstavujú detaily. Ak zachováme v obrázku len vysokospektrálne príspevky, tak dostaneme najmä hrany. Ak zachováme len príspevky nízkych frekvencií dostaneme rozmazaný obrázok.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideálny highpass a lowpass}
+  \begin{block}{Highpass}
+    Transformujeme obrázok. Hodnoty pre nízke frekvencie vynulujeme. Urobíme inverznú transformáciu.
+  \end{block}
+  
+  \begin{block}{Lowpass}
+    Rovnaký proces ale vynulujeme vysoké frekvencie.
+  \end{block}
+  
+  \begin{block}{Cut-off frekvencia}
+    Frekvencia od (do) ktorej nulujeme hodnoty sa nazýva frekvencia.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Butterworthov filter}
+  \begin{block}{Butterworthov filter}
+  \begin{equation*}
+    H = \frac{1}{1+\left(\sqrt{2} - 1\right) \left(\frac{D}{D_0}\right)^{2n}}
+  \end{equation*}
+  D je Euklidovská vzdialenosť od stredu.
+  \end{block}
+
+  \begin{block}{Funkcia na highpass Butterworthov filter}
+    Otvorte si butterhigh.m zo zipu.
+  \end{block}
+  
+  \begin{block}{Úloha}
+    Zobrazte si pomocou imagesc tento filter. Použite tento filter na nejaký obrázok v spektrálnej oblasti. Upravte funkciu aby sme ju mohli použiť na lowpass filter.
+  \end{block}    
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideálny highpass a lowpass}
+  \begin{block}{Úloha}
+  Vytvorte funkcie ktoré vrátia ideálny highpass a ideálny lowpass filter. Použite časť kódu z butterhigh.m.
+  \end{block}
+  
+  \begin{block}{Úloha}
+  Aplikujte filtre s rôznymi cut-off frekvenciami na boat.pgm a zatisie.pgm.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Filtrácia periodického šumu}
+  \begin{block}{Periodický šum}
+  Periodický šum sa vo Fourierovom obraze prejavý ako pár, alebo viac oblastí kde je zvýšená amplitúda. Vďaka tomu môžeme Fourierov obraz upraviť a previesť inverznú transformáciu. Vo výslednom obraze bude periodický šum potlačený.
+  \end{block}
+  
+  \begin{block}{Úloha}
+  Pre obrázok tree.png, waveboat.pgm a periodic.png potlačte pomcou Fourierovej transformácie periodický šum.
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

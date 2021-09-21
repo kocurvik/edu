@@ -1,0 +1,184 @@
+\documentclass{beamer}
+%\usetheme{Ilmenau}
+%\usecolortheme{beaver}
+
+\usepackage[slovak,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+ \usepackage{xcolor}
+ 
+ \newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-2.2\dp\MBox]{\wd\MBox}{1pt}}}
+
+%\usefonttheme{serif}
+
+%\definecolor{UKOrange}{HTML}{ef9424} %
+\definecolor{UKOrange}{HTML}{7a2c18} %
+\definecolor{UKBrown}{HTML}{a96d5e} %
+\definecolor{UKLight}{HTML}{d8b6ab} %
+\definecolor{UKDark}{HTML}{7a4f44}
+\definecolor{UKDarker}{HTML}{4d312b} 
+\definecolor{UKDarkest}{HTML}{2e1e1a}
+\definecolor{UKRed}{HTML}{bf1f1c}
+
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg = UKBrown}
+\setbeamercolor{itemize subitem}{fg = UKLight}
+\setbeamercolor{enumerate item}{fg = UKDark}
+
+\setbeamercolor{footnote}{fg=UKLight}
+\setbeamercolor{footnote mark}{fg=UKLight}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand\footnoterule{}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{title}{fg=white, bg=UKBrown}
+\setbeamercolor{frametitle}{fg=white, bg=UKBrown}
+\setbeamercolor{block title}{bg=UKBrown, fg= white}
+\setbeamercolor{block body}{bg =UKLight, fg = UKDarkest}
+
+\setbeamercolor{block title alerted}{bg=UKOrange, fg= white}
+\setbeamercolor{block body alerted}{bg =UKLight, fg = UKDarkest}
+
+
+%\setbeamercolor{section in toc}{fg = UKBrown}
+%\setbeamercolor{section in toc}{fg = UKDarkest}
+
+% odstrani gulicky
+\renewcommand*{\slideentry}[6]{}
+
+\useoutertheme[subsection=false]{miniframes}
+\AtBeginSection[]{\subsection{}}
+
+\setbeamercolor{below lower separation line head}{bg=UKDark}
+\addtobeamertemplate{headline}{}{%
+  \begin{beamercolorbox}[colsep=0.5pt]{below lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor*{mini frame}{fg=white,bg=UKRosy}
+\setbeamercolor{section in head/foot}{fg=UKLight, bg=UKDark}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+%\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+
+
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+%\defbeamertemplate*{title page}{customized}[1][]
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=8pt,center]{title}
+%      \usebeamerfont{title}\inserttitle
+%    \end{beamercolorbox}
+%  \end{centering}
+%  \bigskip
+%
+%\begin{columns}[onlytextwidth,T]
+%
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoFMFI.png}
+%  
+%  \column{\dimexpr\linewidth-54mm-6mm}
+%  \centering
+%  \vspace{5mm}  
+%  \usebeamerfont{author}\insertauthor\par
+%  \vspace{5mm}
+%  \usebeamerfont{institute}\insertinstitute\par
+%
+%  \column{27mm}
+%  \includegraphics[width=27mm]{images/logoUK.png}  
+%\end{columns}
+%\centering
+%\vspace{7mm}
+%  \usebeamerfont{date}\insertdate\par
+%}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\e}[1]{$\cdot 10^{#1}$}
+
+%\newcommand{\codeblock}[2]{ \begin{block}{#1} \begin{verbatim}#2\end{verbatim}\end{block}}
+
+
+\title[1. Homework]{Advanced Image Processing - Homework Assignment - GUI Edges}
+\author[Kocur]{Ing. Viktor Kocur \\{\small viktor.kocur@fmph.uniba.sk}}
+\institute{DAI FMFI UK}
+\date{30.10.2019}
+
+\begin{document}
+\selectlanguage{slovak}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Assignment}
+\begin{block}{GUI}
+The goal is to create a GUI, in which it is possible to load an image, add noise to it, smooth it and detect edges in it.
+\end{block}
+
+\begin{block}{Specific}
+After loading the image it will be displayed in axes. All of the changes will be shown in the axes. The result after edge detection will be displayed on the side of the image in different axes.
+\end{block}
+
+
+\begin{block}{Reset button}
+Add a button, which allows to reset the changes done to the original image (it will be displayed again as if it was loaded, but without the need to find it again in the computer).
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Noise}
+\begin{block}{Salt and pepper}
+Add a button into the GUI to add salt and pepper noise to the image. Two components will also be added (sliders, textbox) that will enable the user to choose the amount of noise added for both salt and pepper separately. 
+\end{block}
+
+\begin{block}{Additive Gaussian noise}
+Add a button for addition of Additive Gaussian noise to the image. Add a slider as well that determines the value of sigma.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Smoothing and edges}
+
+\begin{block}{Median filtration}
+Add a button for median filtration
+\end{block}
+
+\begin{block}{Gaussian smoothing}
+Add a button for Gaussian smoothing. Add a component which so that the user can choose a sigma for the smoothing.
+\end{block}
+
+\begin{block}{Edges}
+Create a GUI element (buttongroup + radio button, or pop-up menu), which allows the user to choose a method from Sobel, Prewitt, Roberts and Canny. Add a button, which applies the method and the result is displayed in axes next to the original image.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Submission}
+\begin{block}{Submission}
+Submit the created .m a .fig files in a zip with filename surname.zip. Send it to kocurvik@gmail.com with subject PSO - DU1. Deadline is 17.11.2020 at 23:59. The assignment is for 7.5 points. Each day of late submission is -1.5 points.
+\end{block}
+
+\begin{block}{Points}
+
+When grading I will consider the logic of the positions of the UI elements. Make sure that when an elements allows user to select a value that the values that can be selected are reasonable and that it is clear what the values corresponds to. Instead of functions we have created you can use matlab functions (for adding noise, smoothing etc.), but make sure that their parameters correspond to our definitions.
+\end{block}
+\end{frame}
+\end{document}
