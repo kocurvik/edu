@@ -1,6 +1,8 @@
 # Neural networks for computer vision
 
-This repository contains the material for the course.
+This repository contains the material for the course [2-AIN-269/19 Deep learning for computer vision labs](https://sluzby.fmph.uniba.sk/infolist/EN/2-AIN-269.html).
+
+The lab takes place
 
 [Table with grades](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
 
