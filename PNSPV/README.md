@@ -24,8 +24,6 @@ V naselujúcich podúlohách je nutné zmeniť vždy nejakú časť modelu a por
 
 Vyskúšajte vymeniť aktivačné funkcie. Otestujte tri z nasledovných aktivačných funkcií sigmoid, tanh, ELU, LeakyReLU a PReLU. LeakyReLU môžete otestovať aj pre rôzne hodnoty parametru alpha (napr. 0.3, 0.1, 0,03). 
 
-PReLU a LeakyReLU je treba použiť špeciálne podľa [dokumentácie](https://keras.io/layers/advanced-activations/)
-
 ### Optimalizácia (6b)
 
 Otestujte trénovanie pomocou optimalizátorov Adam, SGD alebo RMSProp. Spustite aspoň 4 rôzne konfigurácie (rôzne kroky, rôzne alpha, beta atď). Pre túto úlohu je vhodné využiť v pdfku grafy. 
@@ -58,7 +56,7 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
-Deadline je do **6.11. 23:59**. Ak nebudete stíhať, tak pri neskoršom odovzdaní budem strhávať body.
+Deadline je do **12.11. 23:59**. Ak nebudete stíhať, tak pri neskoršom odovzdaní budem strhávať body.
 
 
 ## Domáca úloha č. 1 (20b) - Alternatíva
@@ -113,9 +111,9 @@ Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne 
 
 Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv).  Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
 
-Deadline na vybratie objektového detektora je cvičenie **1.12.2020**. Detektor mi môžete poslať na MS Teams, mailom, alebo ho môžme prekonzultovať osobne po cvičení.
+Deadline na vybratie objektového detektora je cvičenie **TBA**. Detektor mi môžete poslať na MS Teams, mailom, alebo ho môžme prekonzultovať osobne po cvičení.
 
-Deadline na celú úlohu je **13.12.2020**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
+Deadline na celú úlohu je **TBA**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
 
 ## Domáca úloha č. 3 (10b)
 
