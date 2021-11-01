@@ -20,36 +20,36 @@ Po aktivácii máte možnosť dostať ďalších 300 dolárov kreditov. Tieto kr
 
 Pre predchádzajúcim krokom je nutné aktivovať Google Compute Engine. To sa robí jednoducho kliknutím na Google Compute Engine v menu.
 
-![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/init_compute.png)
+![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/init_compute.png)
 
 
 ### Sprístupnenie GPU
 
 Aby sme mohli používať GPU je nutné zvýšiť si tzv. quotu na gpu. To spravíme v časti **IAM & admin > Quotas**. Je nutné zmeniť kvótu na maximálny počet GPU, ktoré globálne používame.
 
-![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/quota1.png)
+![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota1.png)
 
 Aby sa to ľahsie hľadalo môžeme si vyfiltrovať len globálne nastavenia pre Compute Engine API
 
-![Quota postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/quota2.png)
+![Quota postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota2.png)
 
 Nakoniec podáme požiadavku na zmenu. Táto nemusí byť schválená hneď. Ak náhodou nebude, tak si v neskorších krokch vytvorte VM bez GPU.
 
-![Quota postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/quota3.png)
+![Quota postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota3.png)
 
 ## Vyvtorenie VM
 
 Teraz si vytvoríme virtuálny stroj podľa našich požiadaviek. Prejdeme do **Compute Engine > VM Instances** a vytvoríme novú inštanciu.
 
-![VM postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/vm1.png)
+![VM postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm1.png)
 
 Vyberieme si marketplace, kde sú k dispozícii aj prednastavené VM na ktorých je aj Tensorflow s CUDA rovno aj pre GPU.
 
-![VM postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/vm2.png)
+![VM postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm2.png)
 
 VM si upravíme tak, aby mal priradené GPU Tesla K80. To nám bude stačiť. Môžete skúsiť aj lepšie karty, tie su ale drahšie. Ak nemáte schválené GPU, tak si nechajte len CPU. Stačí nam jednu CPU. Aby sa nám GPU vôbec zobrazili je nutné vybrať zónu **europe-west1-b**. Takisto zaškrtnite aj oboje políčka. Ak máte nastavenia, tak stlačte deploy.
 
-![VM postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/vm3.png)
+![VM postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm3.png)
 
 Po deploynutí virtuálneho stroja sa dostanete do Deployment Managera. My sa ale vrátime do **Compute Engine > VM Instances**. Tu je možné virtuálne stroje spúštať, vypínať ale im aj meniť nastavenia a zdroje ktoré potrebujú.
 
@@ -69,7 +69,7 @@ gcloud compute ssh --project "<project-name>"  --zone "<zone>" "<user_name>@<ins
 Názov projektu si môžete pozrieť, tak že si na zozname VM vyberiete aby sa Vám príkaz SSH uložil do clipboardu.
 
 
-![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/ssh1.png)
+![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ssh1.png)
 
 ## Prenos súborov
 
@@ -93,24 +93,24 @@ Aby sme sa vedeli pripojiť so strojom kamkoľvek je nutné priradiť VM statick
 
 Najprv si vyrobíme nové pravidlo pre firewall. To nájdeme v sekcii **VPC network > Firewall rules**, kde pridáme nové pravidlo.
 
-![Firewall postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/firewall1.png)
+![Firewall postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall1.png)
 
 Pravidlo vyplňte ako na obrázku. V *Targets* vyberte *All instances in the network*. V *Source IP ranges* zadajte *0.0.0.0/0*.
 V *Protocols and ports* vyberte *"Specified protocols and ports"*. Nakoniec vyberte *tcp* and porty *7000-9000*.
 
-![Firewall postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/firewall2.png)
+![Firewall postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall2.png)
 
 Ešte je nutné v nastavení nášho VM povoliť http a https traffic.
 
-![Firewall postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/firewall3.png)
+![Firewall postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall3.png)
 
 Pre vytvorenie statickej IP adresy musíme vojsť do **VPC network > External IP adresses**.
 
-![Static IP postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/ip1.png)
+![Static IP postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ip1.png)
 
 Následne zmeníme adresu z *Ephemeral* na *Static*. Externú adresu potom použijeme neskôr.
 
-![Static IP postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/imgs/ip2.png)
+![Static IP postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ip2.png)
 
 ### Konfigurácia
 
@@ -118,7 +118,7 @@ Ak sa prihlásite cez ssh na VM (prehliadač/Putty/ssh/gcloud), tak urobte tieto
 
 ```
 jupyter notebook --generate-config
-wget https://raw.githubusercontent.com/kocurvik/edu/master/PNNPPV/gcloud/jupyter_notebook_config.py
+wget https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/jupyter_notebook_config.py
 cp -f ./jupyter_notebook_config.py ~/.jupyter/
 rm ./jupyter_notebook_config.py
 python -m notebook.auth password
