@@ -4,7 +4,7 @@ Toto je tutorial na využitie Google Cloudu.
 
 ## Kredity
 
-TBA
+27.10.2021 som Vám odoslal mail s inštrukciami na získanie 50 dolárov v Google Cloude.
 
 ## Upozornenie!
 
