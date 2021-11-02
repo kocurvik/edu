@@ -47,7 +47,7 @@ Vyberieme si marketplace, kde sú k dispozícii aj prednastavené VM na ktorých
 
 ![VM postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm2.png)
 
-VM si upravíme tak, aby mal priradené GPU Tesla K80. To nám bude stačiť. Môžete skúsiť aj lepšie karty, tie su ale drahšie. Ak nemáte schválené GPU, tak si nechajte len CPU. Stačí nam jednu CPU. Aby sa nám GPU vôbec zobrazili je nutné vybrať zónu **europe-west1-b**. Takisto zaškrtnite aj oboje políčka. Ak máte nastavenia, tak stlačte deploy.
+VM si upravíme tak, aby mal priradené GPU nvidia T4. To nám bude stačiť a je cenovo najvýhodnejšie. Môžete skúsiť aj lepšie karty, tie su ale drahšie. Ak nemáte schválené GPU, tak si nechajte len CPU. Stačí nam jedno CPU. Aby sa nám GPU vôbec zobrazili je nutné vybrať zónu napr. **europe-west4-c**. Takisto zaškrtnite aj políčko s inštaláciou driverov. Ak chcete používať notebooky cez GCP interface, tak zaškrtnite aj druhé, ale nemám s tým skúsenosti. Ak máte nastavenia, tak stlačte deploy.
 
 ![VM postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm3.png)
 
@@ -164,9 +164,9 @@ from torchvision import models
 model = models.resnet18(pretrained=True)
 for param in model.parameters():
     param.requires_grad = False
-model.fc = torch.nn.Linear(model.fc.in_features, 1))
+model.fc = torch.nn.Linear(model.fc.in_features, 2))
 
-optimizer = torch.optim.Adam(model.fc.parameters(), lr=1e-4)
+optimizer = torch.optim.Adam(model.fc.parameters(), lr=1e-3)
 ```
 
-Model potom skúste natrénovať v štandardnom trénovacom loope.
+Model potom skúste natrénovať v štandardnom trénovacom loope. Nezabudnite dať pred trénovací loop model.train() a pred validačný model.eval()! Inak to nebude fungovať (ja som zabudol a trvalo mi dlho než som na to prišiel T.T)
