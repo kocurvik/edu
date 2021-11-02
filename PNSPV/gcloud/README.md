@@ -1,6 +1,6 @@
 # Využitie Google Cloudu
 
-Toto je tutorial na využitie Google Cloudu.
+Toto je tutorial na využitie Google Cloudu. Screenshoty môžu byť neaktuálne, ale princíp je rovnaký. Dajú sa nastaviť aj iné veci, napr. pripojenie cez WinSCP a pod. To si ale skúste nájsť tutoriál väčšinou je to ľahko dohľadateľné.
 
 ## Kredity
 
