@@ -156,7 +156,7 @@ transform = transforms.Compose([
 ```
 
 
-Po načítaní modelu si musíme najprv urpaviť jeho výstup. To spravíme tak, že premeníme jeho parameter fc, tak aby na výstupe boli len dva neuróny (alebo jeden + sigmoid). Ak chceme zmraziť vrstvy, tak je vhodné spraviť to ešte predtým. Optimalizovať potom budeme len úplne poslednú vrstvu. Detailnejšie info napr. v [pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
+Po načítaní modelu si musíme najprv urpaviť jeho výstup. To spravíme tak, že premeníme jeho parameter fc, tak aby na výstupe boli len dva neuróny (alebo jeden + sigmoid). Ak chceme zmraziť vrstvy, tak je vhodné spraviť to ešte predtým. Optimalizovať potom budeme len úplne poslednú vrstvu. Detailnejšie info napr. [pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
 
 ```python
 from torchvision import models
