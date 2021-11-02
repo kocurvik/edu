@@ -134,24 +134,37 @@ Po tomto stačí do prehliadača na ľubovoľnom počítači pripojenom na inter
 
 Túto úlohu vypracujte na cloude. Pripraviť si ju môžete u seba, alebo v Colabe. Skúste si ju však spustiť aj na cloude.
 
-V tejto úlohe budeme trénovať sieť s predtrénovanými váhami tzv. fine-tuning alebo transfer learning. Predtrénované modely prevezmeme z [keras applications](https://keras.io/applications/) na datasete cats vs. dogs, ktorý stiahnete napríklad tu:
+V tejto úlohe budeme trénovať sieť s predtrénovanými váhami tzv. fine-tuning alebo transfer learning. Predtrénované modely prevezmeme z torchvision.models na datasete cats vs. dogs, ktorý stiahnete napríklad tu:
 
-```
-https://www.floydhub.com/swaroopgrs/datasets/dogscats/1
-```
-alebo
+
 ```
 https://files.fast.ai/data/examples/dogscats.tgz
 ```
 
-Pre prácu s datasetom použite ImageDataGenerator a jeho metódu flow_from_directory.
+Pre prácu s datasetom použite torchvision.datasets.ImageFolder. Keďže predtrénovaný model predpokladá že na vstupe bude normalizovaný obrázok, tak musíte v jeho konštruktore použiť aj transformácie:
 
-
-Po načítaní modelu máme tri možnosti, buď ponecháme vrstvy ako trénovateľne, všetky zamrazíme, alebo zamrazíme len niektoré začiatočne. Zmrziť vrstvy môýžeme napr.:
 ```python
-xception = keras.applications.xception.Xception(include_top = False)
-for layer in xception.layers:
-    layer.trainable = False
+from torchvision import transforms
+
+transform = transforms.Compose([
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                         std=[0.229, 0.224, 0.225] )
+    ])
 ```
 
-Model použite "bez vrcholu" (include_top = False). A pridajte ho ako "vrstvu" do sekvenčného modelu a po ňom realizujte globálny pooling a kratšiu plne prepojenú sieť na klasifikáciu. Otestujte ako ide tréning pre všetky tri možnosti trénovania častí siete.
+
+Po načítaní modelu si musíme najprv urpaviť jeho výstup. To spravíme tak, že premeníme jeho parameter fc, tak aby na výstupe boli len dva neuróny (alebo jeden + sigmoid). Ak chceme zmraziť vrstvy, tak je vhodné spraviť to ešte predtým. Detailnejšie info napr. v [pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
+
+```python
+from torchvision import models
+
+model = models.ResNet18()
+for param in model.parameters():
+    param.requires_grad = False
+model.fc = torch.nn.Linear(model.fc.in_features, 1))
+```
+
+Model potom skúste natrénovať v štandardnom trénovacom loope.
