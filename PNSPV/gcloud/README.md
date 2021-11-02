@@ -156,15 +156,17 @@ transform = transforms.Compose([
 ```
 
 
-Po načítaní modelu si musíme najprv urpaviť jeho výstup. To spravíme tak, že premeníme jeho parameter fc, tak aby na výstupe boli len dva neuróny (alebo jeden + sigmoid). Ak chceme zmraziť vrstvy, tak je vhodné spraviť to ešte predtým. Detailnejšie info napr. v [pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
+Po načítaní modelu si musíme najprv urpaviť jeho výstup. To spravíme tak, že premeníme jeho parameter fc, tak aby na výstupe boli len dva neuróny (alebo jeden + sigmoid). Ak chceme zmraziť vrstvy, tak je vhodné spraviť to ešte predtým. Optimalizovať potom budeme len úplne poslednú vrstvu. Detailnejšie info napr. v [pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
 
 ```python
 from torchvision import models
 
-model = models.ResNet18()
+model = models.resnet18(pretrained=True)
 for param in model.parameters():
     param.requires_grad = False
 model.fc = torch.nn.Linear(model.fc.in_features, 1))
+
+optimizer = torch.optim.Adam(model.fc.parameters(), lr=1e-4)
 ```
 
 Model potom skúste natrénovať v štandardnom trénovacom loope.
