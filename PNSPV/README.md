@@ -111,7 +111,7 @@ Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne 
 
 Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv).  Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
 
-Deadline na celú úlohu je **12.12.2021 23:59**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
+Deadline na celú úlohu je **19.12.2021 23:59**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Google Cloud.
 
 ## Domáca úloha č. 3 (10b)
 
