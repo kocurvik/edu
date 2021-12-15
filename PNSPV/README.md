@@ -115,7 +115,7 @@ Deadline na celú úlohu je **19.12.2021 23:59**. Keďže trénovanie môže trv
 
 ## Domáca úloha č. 3 (10b)
 
-Cieľom tretej úlohy bude preskúmať nejaký etický, alebo spoločenský problém týkajúci sa využitia machine learningu. Tento problém sa nemusí týkať priamo počítačového videnia. Tému si môžete vybrať aj vlastnú. Schvalovanie tém nieje povinné, ale bude lepšie ak sa ma spýtate na cviku, alebo mailom.
+Cieľom tretej úlohy bude preskúmať nejaký etický, alebo spoločenský problém týkajúci sa využitia machine learningu. Tento problém sa nemusí týkať priamo počítačového videnia. Tému si môžete vybrať aj vlastnú. Je povinné schválenie témy aby sme sa vyhli duplicitným témam. Schválené témy sa budú zapisovať do bodovacej tabuľky.
 
 Príklady tém:
 * vizuálna (re-)identifikácia v štátom riadenej represii (napr. diskusia na reddite [1](https://www.reddit.com/r/MachineLearning/comments/dv5axp/n_hikvision_marketed_ml_surveillance_camera_that/),[2](https://www.reddit.com/r/MachineLearning/comments/bvzc7w/d_has_anyone_noticed_a_lot_of_ml_research_into/))
@@ -132,9 +132,12 @@ Príklady tém:
 * Autonómne zbrane [link](https://futureoflife.org/open-letter-autonomous-weapons/?cn-reloaded=1), alebo [link](https://warontherocks.com/2019/09/terrorist-groups-artificial-intelligence-and-killer-drones/)
 
 ### Podmienky
-Výstupom úlohy bude prezentácia, ktorú budete prezentovať na cvičení **15.12.2020**. Prezentácia by mala byť na 5-10 minút. V jej obshahu uvediete problém, kedy môže nastať a ak už prakticky aj nastal, tak uvedte príklad a popíšte jeho okolnosti a dopady. Ak nie tak uveďte aspon hypotetický príklad. V ďalšej časti uveďte ako je možné detegovať tento problém. Pre 'low level' veci je to napr. postup ako sa zistí, že model je biased. Pre abstraktnejšie celospoločenské problémy je to náročnejšie, každopádne skúste popísať nejaký mechanizmus na detekciu (medzinárodná kontrola, datove audity spoločností, zákony atď.). V nasledujúcej časti popíšte aký môže mať tento problém dopad na spoločnosť na rôznych úrovniach. Popíšte prečo je dopad problematický. V poslednej časti prezentujte možné riešenia problému. Pri riešeniach sa zamerajte na čo najrealistické riešenia, teda nie napr. konverzia spoločenského zriadenia na anarcho-primitivizmus, ktorá by asi problém s AI nemala. Na konci časti s riešeniami spravíte diskusiu, kde uvediete Váš názor na tento problém. Môžete prípadne pripraviť aj nejaké otázky na diskusiu so spolužiakmi. V slidoch by ste mali na konci uviesť zdroje, ktoré ste si prešli teda aspoň 3, z toho aspoň 2 musia byť serióznejšie (vedecké články, printové a established webové médiá).
+Výstupom úlohy bude prezentácia, ktorú budete prezentovať  **5.1.2022 14:50 na MS Teams**. Prezentácia by mala byť na 5-10 minút. V jej obshahu uvediete problém, kedy môže nastať a ak už prakticky aj nastal, tak uvedte príklad a popíšte jeho okolnosti a dopady. Ak nie tak uveďte aspon hypotetický príklad. V ďalšej časti uveďte ako je možné detegovať tento problém. Pre 'low level' veci je to napr. postup ako sa zistí, že model je biased. Pre abstraktnejšie celospoločenské problémy je to náročnejšie, každopádne skúste popísať nejaký mechanizmus na detekciu (medzinárodná kontrola, datove audity spoločností, zákony atď.). V nasledujúcej časti popíšte aký môže mať tento problém dopad na spoločnosť na rôznych úrovniach. Popíšte prečo je dopad problematický. V poslednej časti prezentujte možné riešenia problému. Pri riešeniach sa zamerajte na čo najrealistické riešenia, teda nie napr. konverzia spoločenského zriadenia na anarcho-primitivizmus, ktorá by asi problém s AI nemala. Na konci časti s riešeniami spravíte diskusiu, kde uvediete Váš názor na tento problém. Môžete prípadne pripraviť aj nejaké otázky na diskusiu so spolužiakmi. V slidoch by ste mali na konci uviesť zdroje, ktoré ste si prešli teda aspoň 3, z toho aspoň 2 musia byť serióznejšie (vedecké články, printové a established webové médiá).
 
 Pozn.: Niektoré problémy sú problémami len v kontexte nejakého morálneho systému, alebo ideológie. Ak natrafíte na niečo, čo je prezentované ako problém, ale Vám sa to nezdá, resp. nesúhlasíte s tým, že to problém je, tak to predneste v diskusnej časti. Kľudne sa môže stať, že si vyberiete problém, ktorý ja za problém nepovažujem. Preto ho pri jeho predstavení skúste zasadiť to nejakého kontextu v ktorom problematický je.
+
+
+
 
 
 
