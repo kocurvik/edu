@@ -99,13 +99,13 @@ Väčšina objektových detektorov má dopredu nastavené približné parametre 
 
 ### Vyhodnotenie
 
-Pre každý model bude nutné vytvoriť vyhodnotenie. Budeme používať najmä [IoU metriku](https://en.wikipedia.org/wiki/Jaccard_index) a miery AP teda average precision, teda počet objektov ktoré sme správne detegovali / počet objektov v testovacej množine zpriemerovaný pre všetky triedy. Tu je samozrejme otázka, čo znamená správna detekcia a práve to určíte IoU metrikou. Napríklad skóre AP50 znamená, precision ak ako true positive (správne detegovaný) berieme bounding box, ktorý má oproti ground truth IoU > 0.5. Často sa taktiež používa miera mAP (mean average precision) čo je priemer pre viacero hodnôt AP teda napr. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18
+Pre každý model bude nutné vytvoriť vyhodnotenie. Budeme používať najmä [IoU metriku](https://en.wikipedia.org/wiki/Jaccard_index) a miery AP teda average precision, teda počet objektov ktoré sme správne detegovali / počet objektov v testovacej množine zpriemerovaný pre všetky triedy. Tu je samozrejme otázka, čo znamená správna detekcia a práve to určíte IoU metrikou. Napríklad skóre P50 znamená, precision ak ako true positive (správne detegovaný) berieme bounding box, ktorý má oproti ground truth IoU > 0.5. Niekedy sa používa používa AP ako average precision, ktorá sa počíta ako obsah pod ROC krivkou, ak meníne score threshold na detekciu. Tiež sa rozlišuje AP pre rôzne IOU prahy AP50, AP75 atď. Často sa taktiež používa miera mAP (mean average precision) čo je priemer pre viacero hodnôt AP teda napr. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18
 
-Pre model ktorý deteguje iba jednu obecnú triedu pes samozrejme A v AP nedáva až tak zmysel, keďže máme jednu triedu, ale budeme ho používať pre konzistenciu. Vo vyhodnotení vytvorte graf (scatter plot) kde bude vidno jednolivé hodnoty pre rôzne IoU prahy AP. Takisto spočítajte hodnotu mAP ako je definovaná v predchádzajúcom odstavci. 
+Vo vyhodnotení nebudeme počítať hodnoty AP, ale jednoducho Precision pre dané IOU thresholdy s tým, že threshold na správne detekcie nechajte na defaultnú hodnotu (väčšinou 0.5 a pod). Vytvorte graf (scatter plot) kde bude vidno jednolivé hodnoty pre rôzne IoU prahy AP.
 
-Pre model ktorý rozlišuje plemená spočítajte AP25, AP50 a AP75. Vytvotre tabuľku (môže byť aj txt súbor) v ktorej bude pre každé plemeno zobrazený počet trénovacích dát a precision pre prahy IoU > 0.25, 0.50 a 0.75. V pdf stačí tabuľka kde budú najzaujímavejšie hodnoty (najlepšie a najhoršie pre každú z troch metrík). Okomentujte či tieto hodnoty súvisia počtom príkladov v trénovacích dátach. 
+Pre model ktorý rozlišuje plemená spočítajte P25, P50 a P75. Vytvotre tabuľku (môže byť aj txt súbor) v ktorej bude pre každé plemeno zobrazený počet trénovacích dát a precision pre prahy IoU > 0.25, 0.50 a 0.75. V pdf stačí tabuľka kde budú najzaujímavejšie hodnoty (najlepšie a najhoršie pre každú z troch metrík). Okomentujte či tieto hodnoty súvisia počtom príkladov v trénovacích dátach. 
 
-Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50 pre rôzne veľkosti bounding boxov, ale nieje to potrebné. Výsledky okomentujte. Prekvapilo Vás niečo? Čo ste sa pri tréningu naučili.
+Môžete samozrejme pridať aj iné vyhodnotenie ako napríklad AP50, alebo mAP, ale nieje to potrebné. Výsledky okomentujte. Prekvapilo Vás niečo? Čo ste sa pri tréningu naučili.
 
 ### Odovzdávanie
 
