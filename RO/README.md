@@ -1,3 +1,7 @@
+## Bodovanie/Points
+
+The points for the course can be found in [this table](https://docs.google.com/spreadsheets/d/1__7MTo89wx5vF7VcWWYqoBZ2-aH7OxTYwCNwrOkcJFA/edit?usp=sharing)
+
 ## Projekty
 
 Projekt sa bude skladať zo 4 častí: výber databázy, výber/redukcia príznakov, klasifikácia dát a vyhodnotenie.
