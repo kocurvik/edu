@@ -80,7 +80,7 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 Deadline je do **9.11. 23:59**. Pri neskoršom odovzdaní budem strhávať body. Poznámka - zjavne sa neuploadol upravený notebook na Github, preto tam ostal dátum 12.11. Budem teda akceptovať tento termín ako deadline na odovzdanie!
 
 
-# Domáca úloha č. 2 (20b)
+# Domáca úloha č. 2 (15b)
 Cieľom druhej domácej úlohy bude natrénovať objektový detektor na menšom datasete.
 
 ## Objektový detektor
