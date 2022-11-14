@@ -118,7 +118,7 @@ Pre natrénovaný model bude nutné vytvoriť vyhodnotenie. Budeme používať n
 
 
 ## Odovzdávanie
-Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv). Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
+Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
 
 ## Hodnotenie
 V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, ale skôr postup trénovanie. Ak však napríklad nebudete stíhať, stačí ak natrénujete model, ktorý aspoň trocha funguje po pár epochách a spravíte aj vyhodnotenie. Časť bodov získate aj za popis toho samotný objektový detektor funguje. Preto sa vám oplatí nejaký si vybrať a popísať ho, ak vám napríklad stačí menej bodov.
