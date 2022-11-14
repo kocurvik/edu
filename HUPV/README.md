@@ -78,3 +78,50 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
 Deadline je do **9.11. 23:59**. Pri neskoršom odovzdaní budem strhávať body. Poznámka - zjavne sa neuploadol upravený notebook na Github, preto tam ostal dátum 12.11. Budem teda akceptovať tento termín ako deadline na odovzdanie!
+
+
+# Domáca úloha č. 2 (20b)
+Cieľom druhej domácej úlohy bude natrénovať objektový detektor na menšom datasete.
+
+## Objektový detektor
+Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, CenterNet (existujú dva rôzne), CornerNet, FCOS, ATSS atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
+
+Ako pri minulej úlohe budete aj tento krát odovzdávať pdf súbor. V jeho úvode tak stručne popíšte ako funguje zvolený objektový detektor. Dôležité je popísať základný princíp. Kľudne použite obrázky z publikácie k danému detektoru, alebo odinadiaľ z internetu. Tento text by mal obsahovať odpoveď na otázky:
+
+Aká štruktúra umožňuje zistiť pozíciu objektov?
+Ako táto štruktúra funguje v kontexte tréningu (ako sa počíta loss)?
+Ako zvolený detektor rieši priradenie viacero bounding boxov tomu istému objektu?
+Má táto štruktúra problém class imbalance (objektov je málo a pozadia je veľa) a ak áno ako ho rieši?
+
+## Dataset
+Trénovať budete na datasete [Stanford Dogs](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html). Tento dataset je dosť malý aby sa s ním ľahko pracovalo, ale má reálne nedostatky a ním je málo príkladov pre niektoré triedy a skutoťnosť, že dataset obsahuje iba určitý typ obrázkov (väčšinou jeden pes v prírodnom pozadí). Detektor tak môže pri inom druhu dát zlyhať. To nás ale trápiť nebude, keďže cieľom tejto úlohy je naučiť sa workflow trénovania objektových detektorov.
+
+### train/test split
+K datasetu si stianite aj train/test split. Je v .mat súboroch. Tie v pythone otvoríte napr. pomocou knižnice scipy a metódy scipy.io.loadmat. Tento split budeme používať na vyhodnotenie presnosti na datasete.
+
+### Bounding boxy
+V anotácii k datasetu sú k dispozícii aj bounding boxy. Asi najdôležitejšíe bude správne tieto dáta parsovať a dostať do trénovacieho procesu. Je na Vás, či si napr. tieto anotácie prekonvertujete skriptom do inej formy, alebo si napíšete vlastný generátor. Tento postup okomentujte v pdf.
+
+### Alternatíva k datasetu
+
+Ak sa vám v rámci iného projektu, alebo záverečnej práce hodí natrénovať objektový detektor na inom datasete, tak si túto úlohu môžete so mnou prekonzultovať a celú ju spraviť na vami zvolenom datasete. Musím ho však najprv odsúhlasiť.
+
+## Tréning
+
+Trénovať budete jeden model, ktorý bude detegovať bounding boxy pre rôzne triedy (každé plemeno je iná trieda). Väčšina objektových detektorov má dopredu nastavené približné parametre na trénovanie a taktiež poskytuje predtrénované modely. Tieto kľudne použite, napríklad ak bol backbone predtrénovaný na Imagenete, tak asi skonverguje dosť rýchlo, keďže v ňom je veľmi veľa obrázkov práve psov. Vytvorte si validačnú množinu a sledujte ako sa model učí. Ak to kód umožnuje je lepšie sledovat miery ako mAP, alebo AP50 (o nich nižšie). Takisto je fajn použiť postupnú redukciu trénovacieho kroku, alebo augmentáciu obrazu. Tieto veci neimplementujte ak niesú v stiahnutej implementácii, ale ak sa Vám chce tak samoszrejme môžete. Priebeh tréningu, spôsob delenia množiny a zvolené parametre taktiež pridajte do pdf. 
+
+## Vyhodnotenie
+
+Pre natrénovaný model bude nutné vytvoriť vyhodnotenie. Budeme používať najmä [IoU metriku](https://en.wikipedia.org/wiki/Jaccard_index) a miery AP teda average precision, teda počet objektov ktoré sme správne detegovali / počet objektov v testovacej množine zpriemerovaný pre všetky triedy. Tu je samozrejme otázka, čo znamená správna detekcia a práve to určíte IoU metrikou. Napríklad skóre AP50 znamená, precision ak ako true positive (správne detegovaný) berieme bounding box, ktorý má oproti ground truth IoU > 0.5. Často sa taktiež používa miera mAP (mean average precision) čo je priemer pre viacero hodnôt AP teda napr. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18.
+
+*Pozn.:* Average precision sa často počíta pre nejakú hodnotu recallu. V našej definícii to však tak nie je. Nás bude zaujímať len hranica pre IoU metriku. Toto je tiež známe ako MS COCO mAP. Viac si o rozdieloch vo výpočtoch AP môžete prečítať prečítať [napr. tu.](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173). Je samozrejme možné, že použijete repozitár, kde už bude naimplementovaný iný druh výpočtu pre mAP (napr. VOC). V takom prípade musíte do reportu presne popísať ako tento výpočet prebiehal.
+
+
+## Odovzdávanie
+Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vyhodnotenia. Ak tabuľka s plemenami nebude v pdf, tak ju pridajte ako txt, alebo iný ľahko čítateľný súbor (napr. csv). Ak ste klonovali cudzie repo, ideálne je pridať do pdf link na Váš fork. Ak nie tak pridajte do zipu relevantný kód.
+
+## Hodnotenie
+V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, ale skôr postup trénovanie. Ak však napríklad nebudete stíhať, stačí ak natrénujete model, ktorý aspoň trocha funguje po pár epochách a spravíte aj vyhodnotenie. Časť bodov získate aj za popis toho samotný objektový detektor funguje. Preto sa vám oplatí nejaký si vybrať a popísať ho, ak vám napríklad stačí menej bodov.
+
+
+Deadline na celú úlohu je 11.12.2021 23:59. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
