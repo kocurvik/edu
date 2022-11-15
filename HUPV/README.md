@@ -25,6 +25,10 @@ Projekty sa budú hodnotiť po finálnej prezentácii. Keďže v deep learningu 
 
 Finálna známka bude určená až po absolvovaní skúšky a prezentácie projektu. V prípade, že študent/ka bude mať aspoň 30 bodov za domáce úlohy, tak môže dostať známku aj bez prezentácie finálneho projektu (dufáme však, že aj v takom prípade urobí aspoň menší projekt).
 
+### Bodovacia Tabulka
+
+[link](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
+
 # Domáce úlohy
 
 # Domáca úloha č.1
