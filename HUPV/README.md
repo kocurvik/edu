@@ -88,10 +88,10 @@ Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora 
 
 Ako pri minulej úlohe budete aj tento krát odovzdávať pdf súbor. V jeho úvode tak stručne popíšte ako funguje zvolený objektový detektor. Dôležité je popísať základný princíp. Kľudne použite obrázky z publikácie k danému detektoru, alebo odinadiaľ z internetu. Tento text by mal obsahovať odpoveď na otázky:
 
-Aká štruktúra umožňuje zistiť pozíciu objektov?
-Ako táto štruktúra funguje v kontexte tréningu (ako sa počíta loss)?
-Ako zvolený detektor rieši priradenie viacero bounding boxov tomu istému objektu?
-Má táto štruktúra problém class imbalance (objektov je málo a pozadia je veľa) a ak áno ako ho rieši?
+* Aká štruktúra umožňuje zistiť pozíciu objektov?
+* Ako táto štruktúra funguje v kontexte tréningu (ako sa počíta loss)?
+* Ako zvolený detektor rieši priradenie viacero bounding boxov tomu istému objektu?
+* Má táto štruktúra problém class imbalance (objektov je málo a pozadia je veľa) a ak áno ako ho rieši?
 
 ## Dataset
 Trénovať budete na datasete [Stanford Dogs](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html). Tento dataset je dosť malý aby sa s ním ľahko pracovalo, ale má reálne nedostatky a ním je málo príkladov pre niektoré triedy a skutoťnosť, že dataset obsahuje iba určitý typ obrázkov (väčšinou jeden pes v prírodnom pozadí). Detektor tak môže pri inom druhu dát zlyhať. To nás ale trápiť nebude, keďže cieľom tejto úlohy je naučiť sa workflow trénovania objektových detektorov.
