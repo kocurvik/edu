@@ -129,3 +129,30 @@ V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, 
 
 
 Deadline na celú úlohu je 11.12.2021 23:59. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
+
+
+## Domáca úloha č. 3 (5b)
+
+Cieľom tretej úlohy bude preskúmať nejaký etický, alebo spoločenský problém týkajúci sa využitia machine learningu. Tento problém sa nemusí týkať priamo počítačového videnia. Dole sú príklady tém, ktoré som študentom navrhoval pár rokov späť. Budem rád ak si vyberiete aj vlastnú tému. Je povinné schválenie témy aby sme sa vyhli duplicitným témam. Schválené témy sa budú zapisovať do bodovacej tabuľky.
+
+Príklady tém (zoznam je z roku 2019, niektoré linky nemusia fungovať):
+* vizuálna (re-)identifikácia v štátom riadenej represii (napr. diskusia na reddite [1](https://www.reddit.com/r/MachineLearning/comments/dv5axp/n_hikvision_marketed_ml_surveillance_camera_that/),[2](https://www.reddit.com/r/MachineLearning/comments/bvzc7w/d_has_anyone_noticed_a_lot_of_ml_research_into/))
+* právne aspekty vlastníckych práv k modelom, datasetom, súkromným dátam a pod. [link](https://www.reddit.com/r/MachineLearning/comments/13zvxe/ip_law_and_machine_learning_who_owns_the_model/)
+* nasadenie vizuálnych modelov (napr. UI, alebo [autonómna mobilita](https://www.theguardian.com/technology/shortcuts/2019/mar/13/driverless-cars-racist)) s nedostatočnou reprezentáciou niektorých skupín ľudí
+* problémy zberu medicínskych dát napr. [Google a medicínske dáta](https://www.theguardian.com/commentisfree/2019/nov/14/im-the-google-whistleblower-the-medical-data-of-millions-of-americans-is-at-risk)
+* kapitalizmus a AI napr. [link](https://a2larm.cz/2017/12/skryta-moc-silicon-valley/), alebo [digitálny feudalizmus](https://www.project-syndicate.org/commentary/platform-economy-digital-feudalism-by-mariana-mazzucato-2019-10).
+* [policing AI a bias](https://www.ft.com/content/5753689c-d63e-11e9-a0bd-ab8ec6435630)
+* [sexistický bias v Amazon hiring AI](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G)
+* [bias v analýze textu](https://arxiv.org/abs/1805.04508)
+* [ImageNet roulette](https://a2larm.cz/2019/10/selfie-aplikace-odhalila-temnou-stranku-umele-inteligence/)
+* automatizované generovanie fake news napr. [GPT-2](https://www.theverge.com/2019/11/7/20953040/openai-text-generation-ai-gpt-2-full-model-release-1-5b-parameters)
+* [Tay od microsoftu](https://www.theverge.com/2016/3/24/11297050/tay-microsoft-chatbot-racist)
+* Autonómne zbrane [link](https://futureoflife.org/open-letter-autonomous-weapons/?cn-reloaded=1), alebo [link](https://warontherocks.com/2019/09/terrorist-groups-artificial-intelligence-and-killer-drones/)
+
+### Podmienky
+Výstupom úlohy bude prezentácia, ktorú budete prezentovať  **5.1.2022 14:50 na MS Teams**. Prezentácia by mala byť na 5-7 minút. V jej obshahu uvediete problém, kedy môže nastať a ak už prakticky aj nastal, tak uvedte príklad a popíšte jeho okolnosti a dopady. Ak nie tak uveďte aspon hypotetický príklad. V ďalšej časti uveďte ako je možné detegovať tento problém. Pre 'low level' veci je to napr. postup ako sa zistí, že model je biased. Pre abstraktnejšie celospoločenské problémy je to náročnejšie, každopádne skúste popísať nejaký mechanizmus na detekciu (medzinárodná kontrola, datove audity spoločností, zákony atď.). V nasledujúcej časti popíšte aký môže mať tento problém dopad na spoločnosť na rôznych úrovniach. Popíšte prečo je dopad problematický. V poslednej časti prezentujte možné riešenia problému. Pri riešeniach sa zamerajte na čo najrealistickejšie riešenia, teda nie napr. konverzia spoločenského zriadenia na anarcho-primitivizmus, ktorá by asi problém s AI nemala. Na konci časti s riešeniami spravíte diskusiu, kde uvediete Váš názor na tento problém. Môžete prípadne pripraviť aj nejaké otázky na diskusiu. V slidoch by ste mali na konci uviesť zdroje, ktoré ste si prešli teda aspoň 3, z toho aspoň 2 musia byť serióznejšie (vedecké články, printové a established webové médiá).
+
+Pozn.: Niektoré problémy sú problémami len v kontexte nejakého morálneho systému, alebo ideológie. Ak natrafíte na niečo, čo je prezentované ako problém, ale Vám sa to nezdá, resp. nesúhlasíte s tým, že to problém je, tak to predneste v diskusnej časti. Kľudne sa môže stať, že si vyberiete problém, ktorý ja za problém nepovažujem. Preto ho pri jeho predstavení skúste zasadiť to nejakého kontextu v ktorom problematický je.
+
+
+
