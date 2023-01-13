@@ -19,7 +19,7 @@ Online výuka prebieha na MS Teams v [týme pre predmet](https://teams.microsoft
 Bodovanie je rozdelené na dve časti: praktická časť a skúška. Dohromady je možné získať 100 bodov.
 
 * V praktickej časti je možné získať 30+ bodov za domáce úlohy z cvičení a 40 bodov za projekt. Je možné dohodnúť si rôzne druhy projektov a body sa budú odelovať s prihliadnutím na obtiažnosť. Do finálnej známky sa z cvičení počíta maximálne 60 bodov. Na absolvovanie predmetu je za túto časť nutné získať aspoň 30 bodov.
-* Za skúšku je možné získať 40 bodov. 10 bodov je možné získať za písomnú časť, 30 bodov je možné získať za ústnu odpoveď v troch vylosovaných témach.
+* Za skúšku je možné získať 40 bodov. 20 bodov je možné získať za písomnú časť, 20 bodov je možné získať za ústnu odpoveď v troch vylosovaných témach.
 
 Projekty sa budú hodnotiť po finálnej prezentácii. Keďže v deep learningu sa projekt niekedy nedá uponáhľať, tak bude možné projekty prezentovať aj na termíne ku koncu skúškového obdobia. Z tohto dôvodu je možné ísť na skúšku ešte pred udelením bodov za projekt.
 
