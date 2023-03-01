@@ -14,4 +14,4 @@ Prednášky budú tiež streamované na MS Teams v [týme pre predmet](https://t
 
 ## Bodovanie
 
-TBA
+[Bodovacia Tabuľka](https://docs.google.com/spreadsheets/d/1FvqkhFKG5m5TDBtJG77qKM5IXmrCHezGhQ6b0ZQIezM/edit?usp=sharing)
