@@ -2,11 +2,11 @@
 
 ## TERMÍN PREDNÁŠKY
 
-* utorok 14:50 , M - XII
+* streda 13:10 , M - VIII
 
 ## TERMÍNY CVIČENÍ
 
-* štvrtok 11:30 , F1-248
+* utorok 16:30 , F1-248
 
 
 ## PREDNÁŠKY / CVIČENIA
