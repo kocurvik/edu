@@ -40,9 +40,9 @@ EN:
 | required minimum | 30 pts |
 
 
-### Cvičenia - súbory
+### Cvičenia/Labs materials
 
-* Preztentácie (staré aj nové) s materiálmi sú tu na GitHube 
+* Notebooks are in the notebooks folder. Old matlab presentations are in the presetation folder.
 
 ### Úlohy - Homework
 
