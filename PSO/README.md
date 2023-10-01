@@ -1,28 +1,26 @@
-# Pokročilé Spracovanie Obrazu
+# Pokročilé Spracovanie Obrazu - Advanced Image Processing
 
-## TERMÍN PREDNÁŠKY
+## TERMÍN PREDNÁŠKY - LECTURE TIME SLOT
 
 * streda 13:10 , M - VIII
 
-## TERMÍNY CVIČENÍ
+## TERMÍNY CVIČENÍ - LABS TIME SLOT
 
 * utorok 16:30 , F1-248
 
 
-## PREDNÁŠKY / CVIČENIA
+## PREDNÁŠKY - LECTURES
 
-* [Zuzana Černeková](http://sccg.sk/~cernekova/lectures.html) (I3)
-
-* [Viktor Kocur](https://dai.fmph.uniba.sk/w/Viktor_Kocur/sk) (I4)
+You can find the lectures on the website of [Zuzana Černeková](http://sccg.sk/~cernekova/lectures.html)
 
 
+## CVIČENIA - LABS
+### Points
 
-## CVIČENIA
-### Priebežné bodovanie
+[Table with points](https://docs.google.com/spreadsheets/d/1HX8snZt7RKt2jL3FsLWYoQ04Q5D9IaF4c6Os51pv2eE/edit?usp=sharing)
 
-[Bodovacia tabulka](https://docs.google.com/spreadsheets/d/1HX8snZt7RKt2jL3FsLWYoQ04Q5D9IaF4c6Os51pv2eE/edit?usp=sharing)
-
-### Bodovanie
+### Point System
+SK:
 | | | |
 |-|-|-|
 | veľké úlohy (2x7,5 boda) | 15 bodov |
@@ -32,18 +30,25 @@
 | minimum potrebné na pustenie ku skúške | 30 bodov |
 
 
+EN:
+| | | |
+|-|-|-|
+| homework (2x7,5 pts) | 15 pts |
+| labs + small exercises | 15 pts |
+| project | 20 pts |
+| total | 50 pts |
+| required minimum | 30 pts |
+
+
 ### Cvičenia - súbory
 
 * Preztentácie (staré aj nové) s materiálmi sú tu na GitHube 
 
-### Úlohy
+### Úlohy - Homework
 
-Zadania domácich úloh sú v priečinku du.
+**TBA**
 
-Prvé zadanie je uploadnuté jeho deadline je **TBA**.
-
-### Projekty
-
+### Projekty (SK)
 Príklad tém: segmentácia ruky, spočítanie hodnoty mincí na stole, detekcia hodu hracej kocky, spočítanie kníh na poličke,
 
 Samozrejme môžete si vymzslieť aj vlastnú tému. Tú však treba schváliť.
