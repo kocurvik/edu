@@ -81,7 +81,7 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
-Deadline je do **9.11. 23:59**. Pri neskoršom odovzdaní budem strhávať body. Poznámka - zjavne sa neuploadol upravený notebook na Github, preto tam ostal dátum 12.11. Budem teda akceptovať tento termín ako deadline na odovzdanie!
+Deadline je do TBA. Pri neskoršom odovzdaní budem strhávať body. Poznámka - zjavne sa neuploadol upravený notebook na Github, preto tam ostal dátum 12.11. Budem teda akceptovať tento termín ako deadline na odovzdanie!
 
 
 # Domáca úloha č. 2 (15b)
@@ -128,7 +128,7 @@ Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vy
 V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, ale skôr postup trénovanie. Ak však napríklad nebudete stíhať, stačí ak natrénujete model, ktorý aspoň trocha funguje po pár epochách a spravíte aj vyhodnotenie. Časť bodov získate aj za popis toho samotný objektový detektor funguje. Preto sa vám oplatí nejaký si vybrať a popísať ho, ak vám napríklad stačí menej bodov.
 
 
-Deadline na celú úlohu je 11.12.2021 23:59. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
+Deadline na celú úlohu je TBA. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
 
 
 ## Domáca úloha č. 3 (5b)
@@ -151,7 +151,7 @@ Príklady tém (zoznam je z roku 2019, niektoré linky nemusia fungovať):
 
 ### Podmienky
 
-Témy si záväzne vyberte do **13.12.2022**.
+Témy si záväzne vyberte do TBA.
 
 Výstupom úlohy bude prezentácia, ktorú budete prezentovať  **TBA**. Prezentácia by mala byť na 5-7 minút. V jej obshahu uvediete problém, kedy môže nastať a ak už prakticky aj nastal, tak uvedte príklad a popíšte jeho okolnosti a dopady. Ak nie tak uveďte aspon hypotetický príklad. V ďalšej časti uveďte ako je možné detegovať tento problém. Pre 'low level' veci je to napr. postup ako sa zistí, že model je biased. Pre abstraktnejšie celospoločenské problémy je to náročnejšie, každopádne skúste popísať nejaký mechanizmus na detekciu (medzinárodná kontrola, datove audity spoločností, zákony atď.). V nasledujúcej časti popíšte aký môže mať tento problém dopad na spoločnosť na rôznych úrovniach. Popíšte prečo je dopad problematický. V poslednej časti prezentujte možné riešenia problému. Pri riešeniach sa zamerajte na čo najrealistickejšie riešenia, teda nie napr. konverzia spoločenského zriadenia na anarcho-primitivizmus, ktorá by asi problém s AI nemala. Na konci časti s riešeniami spravíte diskusiu, kde uvediete Váš názor na tento problém. Môžete prípadne pripraviť aj nejaké otázky na diskusiu. V slidoch by ste mali na konci uviesť zdroje, ktoré ste si prešli teda aspoň 3, z toho aspoň 2 musia byť serióznejšie (vedecké články, printové a established webové médiá).
 
