@@ -4,7 +4,7 @@ Toto je tutorial na využitie Google Cloudu. Screenshoty môžu byť neaktuálne
 
 ## Kredity
 
-24.10.2022 som Vám odoslal mail s inštrukciami na získanie 50 dolárov v Google Cloude.
+26.10.2022 som Vám odoslal mail s inštrukciami na získanie 50 dolárov v Google Cloude.
 
 ## Upozornenie!
 
