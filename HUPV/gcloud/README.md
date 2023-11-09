@@ -169,4 +169,4 @@ model.fc = torch.nn.Linear(model.fc.in_features, 2))
 optimizer = torch.optim.Adam(model.fc.parameters(), lr=1e-3)
 ```
 
-Model potom skúste natrénovať v štandardnom trénovacom loope. Nezabudnite dať pred trénovací loop model.train() a pred validačný model.eval()! Inak to nebude fungovať (ja som zabudol a trvalo mi dlho než som na to prišiel T.T)
+Model potom skúste natrénovať v štandardnom trénovacom loope. Nezabudnite dať pred trénovací loop model.train() a pred validačný model.eval()! Inak to nebude fungovať.
