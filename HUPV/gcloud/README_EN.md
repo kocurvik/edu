@@ -20,35 +20,35 @@ After activation you are eligible for further 300 dollars worth of credits. Acti
 
 Before applying for GPUs you will need to active the Google Compute Engine. This is simply done by clicking the Google Compute Engine in the menu on the left.
 
-![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/init_compute.png)
+![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/init_compute.png)
 
 
 ### GPU access
 
 In order to use the GPUs it is necessary to increate the GPU quota. This can be done in **IAM & admin > Quotas**. It is neccessary to increase the quota for the global number of GPUs you will use.
 
-![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota1.png)
+![Quota postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/quota1.png)
 
 Filter out the quotas by the keyword GPU.
 
-![Quota postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota2.png)
+![Quota postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/quota2.png)
 
 Now we will request a qouta change. This may not be approved immediately. If this is the case you can create a VM without GPUs in the following steps.
 
-![Quota postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/quota3.png)
+![Quota postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/quota3.png)
 
 ## Creating a VM
 
 Now we will create a virtual machine to suit our needs. Go to **Compute Engine > VM Instances** and create a new instance.
 
-![VM postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm1.png)
+![VM postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/vm1.png)
 
 Now choose marketplace and select the the Deep Learning VM since it already has Tensorflow along with CUDA.
 
-![VM postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm2.png)
+![VM postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/vm2.png)
 
 We can change the configuration and select a different GPU, CPUs or storage. By default it is best to use K80 GPUs since they are cheapest. If you do not have a GPU then try this only with CPUS. If you do not see GPUs it is possible that they are not available in the selected zone. In Slovakia it is best to select the zone **europe-west1-b**. Also make sure you check both of the checkboxes.
-![VM postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/vm3.png)
+![VM postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/vm3.png)
 
 After deploying the VM you will be redirected to the Deployment Manger. We will switch to **Compute Engine > VM Instances**. Here it is possible to run, stop or change the settings of our VMs.avenia a zdroje ktoré potrebujú.
 
@@ -68,7 +68,7 @@ gcloud compute --project "<project-name>"  --zone "<zone>" ssh "<user_name>@<ins
 
 The project name and zone can be copied from the clipboard.
 
-![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ssh1.png)
+![SSH postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/ssh1.png)
 
 ## File transfer
 
@@ -92,23 +92,23 @@ In order to connect to the machine we will need to assign it a static IP address
 
 First we will create a new rule for firewall. This can be found in the **VPC network > Firewall rules**. We add a new rule there.
 
-![Firewall postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall1.png)
+![Firewall postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/firewall1.png)
 
 Fill it out in the same way as is presented in the image. In *Targets* select *All instances in the network*. In *Source IP ranges* fill in *0.0.0.0/0*. In *Protocols and ports* select *"Specified protocols and ports"*. At the end choose *tcp* and ports *7000-9000*.
 
-![Firewall postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall2.png)
+![Firewall postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/firewall2.png)
 
 We will also need to allow http and https traffic in our instace.
 
-![Firewall postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/firewall3.png)
+![Firewall postup 3](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/firewall3.png)
 
 To create a new static IP go to **VPC network > External IP adresses**.
 
-![Static IP postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ip1.png)
+![Static IP postup 1](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/ip1.png)
 
 Then change the address from *Ephemeral* to *Static*. We will use this later.
 
-![Static IP postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/PNSPV/gcloud/imgs/ip2.png)
+![Static IP postup 2](https://raw.githubusercontent.com/kocurvik/edu/master/HUPV/gcloud/imgs/ip2.png)
 
 ### Konfigurácia
 
