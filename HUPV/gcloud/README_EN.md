@@ -130,28 +130,38 @@ After this you only need to input <your external IP address>:8888 into your brow
 
 ## Exercise - fine-tuning
 
-Do this exercise on the cloud. You can prepare the code on your computer or in the Google Colab. However you should run the code in the cloud.
+Do this exercise on the cloud. You can prepare it locally or in Colab, but it would be ideal if you run it for at least a while on the cloud.
 
-This task deals with fine-tuning a neural network which was already pretrained on some dataset. The pretrained models are available at: [keras applications](https://keras.io/applications/). We will fine-tune these models ont the cats vs. dogs dataset, which you can find here:
-
-```
-https://www.floydhub.com/swaroopgrs/datasets/dogscats/1
-```
-alebo
+In this exercise we will train a network with pre-trained weights which is known as fine-tuning or transfer learning. We will use the models from torchvision.models on the cats vs. dogs. You can download it here:
 ```
 https://files.fast.ai/data/examples/dogscats.tgz
 ```
 
-To use that dataset use the ImageDataGenerator and its method flow_from_directory.
-
-When loading the pretrained model we have three options. We either keep all of the layers trainable, we freeze almost all of them or we freeze just some of them. You can freeze the layers in a for cycle.
+To work with the dataset you can use torchvision.datasets.ImageFolder. Since the pre-trained model assumes normalized inputs you have use the following transform in the Dataset constructor.
 
 ```python
-xception = keras.applications.xception.Xception(include_top = False)
-for layer in xception.layers:
-    layer.trainable = False
+from torchvision import transforms
+
+transform = transforms.Compose([
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                         std=[0.229, 0.224, 0.225] )
+    ])
 ```
 
-Use the model without top (include_top = False). You will then need to add some dense layers at the end of the model.
+After loading the model we have to adjust its output. We can do this by changing the fc parmater so the output only contains two neurons (or one neuron with sigmoid). If we want to freeze the layers it is advisable to do this in advance. We will then perform optimization only on the last layer. You can find more info in [this pytorch tutorial](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)
 
-You can add the loaded model as a "layer" into the a new Sequential model and then add a Global Pooling layer and few Dense layers. Test the training for all of the three options.
+```python
+from torchvision import models
+
+model = models.resnet18(pretrained=True)
+for param in model.parameters():
+    param.requires_grad = False
+model.fc = torch.nn.Linear(model.fc.in_features, 2))
+
+optimizer = torch.optim.Adam(model.fc.parameters(), lr=1e-3)
+```
+
+Model potom skúste natrénovať v štandardnom trénovacom loope. Nezabudnite dať pred trénovací loop model.train() a pred validačný model.eval()! Inak to nebude fungovať.then add a Global Pooling layer and few Dense layers. Test the training for all of the three options.
