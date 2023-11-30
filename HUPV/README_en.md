@@ -54,3 +54,48 @@ The deadline is **27.11.2023 15:00**. I will deduct points for late submissions.
 ## Homework no. 1 (15b) - Alternative
 
 As an alternative to the first homework, one of the notebooks from the exercises can be rewritten into another framework. Target frameworks can be, for example, JAX, or something else. If you are interested in this form of the first home homework please discuss this option with me.
+
+## Homework no. 2 (15b) - Object Detector
+The goal of the second homework will be to train an object detector on a smaller dataset.
+
+### Object detector
+The first part of the task will be to find some object dector based on deep learning ideally from Github like e.g. YOLO, RetinaNet, CenterNet (there are two different ones), CornerNet, FCOS, ATSS, etc. Most of them also exist in a version for keras. You will send the choice of detector to me for approval by mail/MS Teams/in person after the exercise. Ideally, send a direct link to the repository. However, if you find that it somehow doesn't work, you can change the detector later. I would also like it if you all didn't have the same detector.
+
+As with the previous assignment, you will be submitting a pdf file this time as well. In its introduction, briefly describe how the selected object detector works. It is important to describe the basic principle. Feel free to use images from the publication for the given detector, or from there on the Internet. This text should contain answers to the questions:
+
+* What structure makes it possible to determine the position of objects?
+* How does this structure work in the context of training (how is loss calculated)?
+* How does the selected detector solve the assignment of multiple bounding boxes to the same object?
+* Does this structure have a class imbalance problem (there are few objects and a lot of background) and if so, how is it approached?
+
+### Dataset
+You will train on the [Stanford Dogs](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html) dataset. This dataset is small enough to be easy to work with, but it has real shortcomings, which are few examples for some classes and the fact that the dataset only contains a certain type of images (mostly one dog in a natural background). The detector can therefore fail with other types of data. But that won't bother us, since the goal of this task is to learn the workflow of training object detectors.
+
+### train/test split
+You can also download the train/test split for the dataset. It is in .mat files. You can open them in Python, e.g. using the scipy library and the scipy.io.loadmat method. We will use this split to evaluate accuracy on the dataset.
+
+### Bounding boxes
+Bounding boxes are also available in the dataset annotation. Probably the most important thing will be to correctly parse this data and get it into the training process. It is up to you whether you, for example, you convert these annotations into another form with a script, or you write your own generator. Comment this procedure in pdf.
+
+### An alternative to the dataset
+
+If it is convenient for you to train the object detector on another dataset as part of another project or final thesis, you can consult with me about this task and do it all on the dataset of your choice. But I have to approve it first.
+
+### Training
+
+You will train one model that will detect bounding boxes for different classes (each breed is a different class). Most object detectors have pre-set approximate parameters for training and also provide pre-trained models. Feel free to use these, for example, if the backbone was pre-trained on Imagenet, it will probably converge quite quickly, since there are a lot of images of dogs in it. Create a validation set and watch the model learn. If the code allows it, it is better to monitor measures such as mAP or AP50 (more on them below). It is also nice to use gradual reduction of the training step or image augmentation. Do not implement these things if they are not in the downloaded implementation, but of course you can if you want to. Also add the plots of the training process, the method of dividing the dataset, and the selected parameters to the pdf.
+
+### Evaluation
+
+It will be necessary to create an evaluation for the trained model. We will mainly use the [IoU metric](https://en.wikipedia.org/wiki/Jaccard_index) and AP measures, i.e. average precision, i.e. the number of objects we correctly detected / the number of objects in the test set averaged for all classes. There is of course the question of what proper detection means and that is what you determine with the IoU metric. For example, the AP50 score means precision if we take as a true positive (correctly detected) a bounding box that has an IoU > 0.5 compared to the ground truth. The measure mAP (mean average precision) is also often used, which is the average for several AP values, i.e. e.g. mAP = (AP05 + AP10 + ... + AP90 + AP95) / 18.
+
+*Note:* Average precision is often calculated for some recall value. However, this is not the case in our definition. We will only be interested in the threshold for the IoU metric. This is also known as MS COCO mAP. You can read more about the differences in AP calculations [e.g. here.](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173). It is of course possible that you will use a repository where another type of calculation for mAP (eg VOC) will already be implemented. In that case, you must describe in the report exactly how this calculation took place.
+
+
+### Submission
+Email a pdf file with a description of the model, data preparation, training and evaluation. If you cloned a foreign repo, it is ideal to add a link to your fork in the pdf. If not, add the relevant code to the zip.
+
+### Grading
+The grading will not directly take into account what results your model achieved, but rather the training process. However, if, for example, you will not have sufficient time to train the model fully, it is sufficient if you train a model that at least works a little after a few epochs and also make then perform evaluation on this unfinished model. You will also get some of the points for describing how the object detector itself works. Therefore, it is worthwhile to choose one and describe it if, for example, fewer points are enough for you.
+
+The deadline for the entire assignment is TBA. Since training can take a relatively long time, I recommend starting earlier than a week before turning the homework in. You can train wherever you want, but I recommend trying Google Cloud.
