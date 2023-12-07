@@ -99,3 +99,29 @@ Email a pdf file with a description of the model, data preparation, training and
 The grading will not directly take into account what results your model achieved, but rather the training process. However, if, for example, you will not have sufficient time to train the model fully, it is sufficient if you train a model that at least works a little after a few epochs and also make then perform evaluation on this unfinished model. You will also get some of the points for describing how the object detector itself works. Therefore, it is worthwhile to choose one and describe it if, for example, fewer points are enough for you.
 
 The deadline for the entire assignment is **19.12. 23:59**. Since training can take a relatively long time, I recommend starting earlier than a week before turning the homework in. You can train wherever you want, but I recommend trying Google Cloud.
+
+## Homework no. 3 (5b)
+
+The goal of the third task will be to examine some ethical or social problem related to the use of machine learning. This problem may not be directly related to computer vision. Below are examples of topics I suggested to students a few years back. You can take this list as a free inspiration. I would be happy if you choose your own topic. Topic approval is mandatory to avoid duplicate topics. Email me the topics and I'll enter them into the scoring table.
+
+Examples of topics (the list is from 2019, some links may not work) - The list is for inspiration. You can choose your own topic:
+* visual (re-)identification in state-directed repression (e.g. reddit discussion [1](https://www.reddit.com/r/MachineLearning/comments/dv5axp/n_hikvision_marketed_ml_surveillance_camera_that/),[2](https:/ /www.reddit.com/r/MachineLearning/comments/bvzc7w/d_has_anyone_noticed_a_lot_of_ml_research_into/))
+* legal aspects of ownership rights to models, datasets, private data, etc. [link](https://www.reddit.com/r/MachineLearning/comments/13zvxe/ip_law_and_machine_learning_who_owns_the_model/)
+* deployment of visual models (eg UI, or [autonomous mobility](https://www.theguardian.com/technology/shortcuts/2019/mar/13/driverless-cars-racist)) with insufficient representation of some groups of people
+* problems of collecting medical data, e.g. [Google and medical data](https://www.theguardian.com/commentisfree/2019/nov/14/im-the-google-whistleblower-the-medical-data-of-millions-of-americans-is-at -risk)
+* capitalism and AI e.g. [link](https://a2larm.cz/2017/12/skryta-moc-silicon-valley/), or [digital feudalism](https://www.project-syndicate.org/commentary/platform-economy- digital-feudalism-by-mariana-mazzucato-2019-10).
+* [policing AI and bias](https://www.ft.com/content/5753689c-d63e-11e9-a0bd-ab8ec6435630)
+* [sexist bias in Amazon hiring AI](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed- bias-against-women-idUSKCN1MK08G)
+* [bias in text analysis](https://arxiv.org/abs/1805.04508)
+* [ImageNet roulette](https://a2larm.cz/2019/10/selfie-aplikace-odhalila-temnou-stranku-umele-intelligence/)
+* automated generation of fake news, e.g. [GPT-2](https://www.theverge.com/2019/11/7/20953040/openai-text-generation-ai-gpt-2-full-model-release-1-5b-parameters)
+* [Tay by microsoft](https://www.theverge.com/2016/3/24/11297050/tay-microsoft-chatbot-racist)
+* Autonomous weapons [link](https://futureoflife.org/open-letter-autonomous-weapons/?cn-reloaded=1), or [link](https://warontherocks.com/2019/09/terrorist- groups-artificial-intelligence-and-killer-drones/)
+
+### Conditions
+
+You must choose the topics by **exercise 14.12.2023**.
+
+The output of this homework will be a presentation that you will present **TBA**. The presentation should be for 5-10 minutes. In its content, you will state the problem, when it may arise, and if it has already occurred, give an example and describe its circumstances and consequences. If not, at least give a hypothetical example. In the next section, state how this problem can be detected. For 'low level' things it is e.g. procedure to determine that the model is biased. For more abstract society-wide problems, it is more difficult, in any case, try to describe some mechanism for detection (international control, company data audits, laws, etc.). In the following section, describe how this problem can impact society at various levels. Describe why the impact is problematic. In the last part, present possible solutions to the problem. For solutions, focus on the most realistic solutions possible, i.e. not e.g. the conversion of the social order to anarcho-primitivism, which probably would not have a problem with AI. At the end of the solution section, you will have a discussion where you will state your opinion on this problem. You can also prepare some questions for discussion. At the end of the slides, you should list the sources you have reviewed, i.e. at least 3, of which at least 2 must be more serious (scientific articles, print and established web media).
+
+Note: Some problems are problems only in the context of a moral system or ideology. If you come across something that is presented as a problem, but you don't think so, or you don't agree that this is a problem, then bring it up in the discussion section. It may well happen that you choose a problem that I do not consider a problem. Therefore, when presenting it, try to put it in some context in which it is problematic.
