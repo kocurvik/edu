@@ -1,4 +1,4 @@
-# 10th and 11th Lab - Fun with running someone else's code.
+# Bonus Tasks - ~~Trials and tribulations~~ The joy of running someone else's code.
 
 Quite often when working with SOTA vision systems you will not write all of the code yourself, but will use some existing code and icorporate it into your own codebase or a pipeline. For the rest of the labs you may choose among different 3D vision repositories and try to run them. You will get points based on the estimated difficulty of the install and running. I have tried some of these repos and have given estimated points in parentheses. However, I have not worked with some of them (with some only long ago) so my estimation may be wrong. Therefore, if you feel that the install and running deserves more points you can show me the work you have done to run the repo and I may give you more points.
 
