@@ -2,11 +2,11 @@
 
 ## TERMÍN PREDNÁŠKY - LECTURE TIME SLOT
 
-* streda 13:10 , M - VIII
+* utorok 9:50 , M - X
 
 ## TERMÍNY CVIČENÍ - LABS TIME SLOT
 
-* utorok 16:30 , F1-248
+* štvrtok 16:30 , F1-248
 
 
 ## PREDNÁŠKY - LECTURES
