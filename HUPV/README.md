@@ -9,9 +9,9 @@
 
 ## Výuka
 
-* Prednášky - štvrtok 9:50 M-V
-* Cvičenia - štvrtok 18:10 F1-248
-
+* Prednášky - štvrtok 12:20 M-X
+* Cvičenia - štvrtok 18:10 H-3
+  
 ## Bodovanie
 
 Bodovanie je rozdelené na dve časti: praktická časť a skúška. Dohromady je možné získať 100 bodov.
