@@ -81,7 +81,7 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
-Deadline je do **27.11.2023 15:00**. Pri neskoršom odovzdaní budem strhávať body.
+Deadline je do **29.11.2023 17:00**. Pri neskoršom odovzdaní budem strhávať body.
 
 
 ## Domáca úloha č. 1 (15b) - Alternatíva
