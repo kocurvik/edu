@@ -1,14 +1,5 @@
 # Pokročilé Spracovanie Obrazu - Advanced Image Processing
 
-## TERMÍN PREDNÁŠKY - LECTURE TIME SLOT
-
-* utorok 9:50 , M - X
-
-## TERMÍNY CVIČENÍ - LABS TIME SLOT
-
-* štvrtok 16:30 , F1-248
-
-
 ## PREDNÁŠKY - LECTURES
 
 You can find the lectures on the website of [Zuzana Černeková](http://sccg.sk/~cernekova/lectures.html)
@@ -23,8 +14,7 @@ You can find the lectures on the website of [Zuzana Černeková](http://sccg.sk/
 SK:
 | | | |
 |-|-|-|
-| veľké úlohy (2x7,5 boda) | 15 bodov |
-| aktivita na cviečeniach + malé úlohy (max 10 bodov) | 15 bodov |
+| domáce úlohy | 30 bodov |
 | projekt | 20 bodov |
 | spolu | 50 bodov |
 | minimum potrebné na pustenie ku skúške | 30 bodov |
@@ -33,8 +23,7 @@ SK:
 EN:
 | | | |
 |-|-|-|
-| homework (2x7,5 pts) | 15 pts |
-| labs + small exercises | 15 pts |
+| homework | 30 pts |
 | project | 20 pts |
 | total | 50 pts |
 | required minimum | 30 pts |
