@@ -8,7 +8,9 @@ Linky:
 
 [Dáta pre lokalizáciu](https://liveuniba-my.sharepoint.com/:u:/g/personal/kocur15_uniba_sk/EVW4VwHy5ldBhSEtRw2Q0moBAi_Evee3LhDWc5ae81zRrQ?e=MJdH7o\&download=1)
 
+```shell
 wget -o fmfi.tar.gz https://liveuniba-my.sharepoint.com/:u:/g/personal/kocur15_uniba_sk/EVW4VwHy5ldBhSEtRw2Q0moBAi_Evee3LhDWc5ae81zRrQ?e=MJdH7o\&download=1
+```
 
 [Dáta pre detekciu](https://liveuniba-my.sharepoint.com/:u:/g/personal/kocur15_uniba_sk/EUb4y4ho8WxFmvTmU4E0SxYBwLyfpbRfM_U_R0ioNDoVsg?e=Z21TYA\&download=1)
 
@@ -26,7 +28,7 @@ The data for reconstruction is available [here](https://liveuniba-my.sharepoint.
 
 After creating a sparse model use the repository code to obtain the location of your camera when you took a photo of the entrance.
 
-## Homework
+## Workshop
 
 In this exercise your task will be to construct a sparse model of an object using several images of it and then estimate its pose in some other images. You can download the data [here](https://liveuniba-my.sharepoint.com/:u:/g/personal/kocur15_uniba_sk/EUb4y4ho8WxFmvTmU4E0SxYBwLyfpbRfM_U_R0ioNDoVsg?e=Z21TYA\&download=1).
 
