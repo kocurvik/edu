@@ -22,7 +22,7 @@ In the second part of the lab we will use a code repository for SfM called [hloc
 
 ## Exercise
 
-Your objective will be to use this repository to localize the image you have taken of the "Matematika" entrance to our faculty. You can use the official [demo colab notebook](https://colab.research.google.com/drive/1MrVs9b8aQYODtOGkoaGNF9Nji3sbCNMQ).
+Your objective will be to use this repository to localize the image you have taken of the "Matematika" entrance to our faculty. You can use the official [demo colab notebook](https://colab.research.google.com/drive/17XwSU6HbKjiYTHB-BNOMQX3B8bJcINT5).
 
 The data for reconstruction is available [here](https://liveuniba-my.sharepoint.com/:u:/g/personal/kocur15_uniba_sk/EVW4VwHy5ldBhSEtRw2Q0moBAi_Evee3LhDWc5ae81zRrQ?e=MJdH7o\&download=1). You can download it using wget.
 
