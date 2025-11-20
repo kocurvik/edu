@@ -59,7 +59,7 @@ As an alternative to the first homework, one of the notebooks from the exercises
 The goal of the second homework will be to train an object detector on a smaller dataset.
 
 ### Object detector
-The first part of the task will be to find some object dector based on deep learning ideally from Github like e.g. YOLO, RetinaNet, CenterNet (there are two different ones), CornerNet, FCOS, ATSS, etc. Most of them also exist in a version for keras. You will send the choice of detector to me for approval by mail/MS Teams/in person after the exercise. Ideally, send a direct link to the repository. However, if you find that it somehow doesn't work, you can change the detector later. I would also like it if you all didn't have the same detector.
+The first part of the task will be to find some object dector based on deep learning ideally from Github like e.g. YOLO, RetinaNet, CenterNet (there are two different ones), CornerNet, FCOS, ATSS, etc. Most of them also exist in a version for keras. You will send the choice of detector to me for approval by mail/MS Teams/in person after the exercise. Ideally, send a direct link to the repository. However, if you find that it somehow doesn't work, you can change the detector later. I would also like it if you all didn't have the same detector. **You cannot choose Ultralytics detectors as they do not have papers associated with them**.
 
 As with the previous assignment, you will be submitting a pdf file this time as well. In its introduction, briefly describe how the selected object detector works. It is important to describe the basic principle. Feel free to use images from the publication for the given detector, or from there on the Internet. This text should contain answers to the questions:
 
