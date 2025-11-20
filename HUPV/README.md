@@ -93,7 +93,7 @@ Ako alternatívu prvej domácej úlohy je možné jeden z notebookov z cvičení
 Cieľom druhej domácej úlohy bude natrénovať objektový detektor na menšom datasete.
 
 ## Objektový detektor
-Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, CenterNet (existujú dva rôzne), CornerNet, FCOS, ATSS atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor.
+Prvá časť úlohy bude spočívať v nájdení nejakého objektového dektora založeného na hlbokom učení ideálne z Githubu ako napr. YOLO, RetinaNet, CenterNet (existujú dva rôzne), CornerNet, FCOS, ATSS atď. Väčšina z nich existuje aj vo verzii pre keras. Výber detektora mi pošlete na schválenie na mail/MS Teams/osobne po cvičení. Posielajte ideálne rovno link na repozitár. Ak však zistíte, že to nejako nejde, tak detektor môžete neskôr zmeniť. Bol by som tiež rád ak by ste nemali všetci rovnaký detektor. **Modely od Ultralytics nie je možné použiť, keďže k nim nie sú články popisujúce metódu.**
 
 Ako pri minulej úlohe budete aj tento krát odovzdávať pdf súbor. V jeho úvode tak stručne popíšte ako funguje zvolený objektový detektor. Dôležité je popísať základný princíp. Kľudne použite obrázky z publikácie k danému detektoru, alebo odinadiaľ z internetu. Tento text by mal obsahovať odpoveď na otázky:
 
@@ -133,7 +133,7 @@ Na mail odovzdajte pdf súbor s popisom modelu, prípravy dát, trénovania a vy
 V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, ale skôr postup trénovanie. Ak však napríklad nebudete stíhať, stačí ak natrénujete model, ktorý aspoň trocha funguje po pár epochách a spravíte aj vyhodnotenie. Časť bodov získate aj za popis toho samotný objektový detektor funguje. Preto sa vám oplatí nejaký si vybrať a popísať ho, ak vám napríklad stačí menej bodov.
 
 
-Deadline na celú úlohu je **TBA**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
+Deadline na celú úlohu je **16.12. 9:00**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam skúsiť Google Cloud.
 
 
 ## Domáca úloha č. 3 (5b)
