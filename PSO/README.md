@@ -40,11 +40,11 @@ Finish the homework assignments in the folder notebooks/hw2025 by **5.1.2026 12:
 ### Projekty (SK)
 Príklad tém: segmentácia ruky, spočítanie hodnoty mincí na stole, detekcia hodu hracej kocky, spočítanie kníh na poličke,
 
-Samozrejme môžete si vymzslieť aj vlastnú tému. Tú však treba schváliť.
+Samozrejme môžete si vymyslieť aj vlastnú tému. Tú však treba schváliť najneskôr na cvičení **11.12. o 13:10**.
 
 #### Požiadavky
 
-Výstupom projektu bude najmä prezentácia, ktorá sa uskutoční na poslednom cvičení a kód/demo vášho algoritmu. 
+Výstupom projektu bude najmä prezentácia, ktorá sa uskutoční na poslednom cvičení **18.12. o 13:10** a kód/demo vášho algoritmu. 
 
 V rámci projektu sa očakáva, že:
 * naštudujete relevantnú literatúru (nemusí ísť len o vedecké publikácie)
@@ -68,11 +68,11 @@ Najčastejšia otázka po prezentácii býva: "Na prednáške/cvičení sme robi
 
 Example topics: hand segmentation, counting the value of coins on a desk, dice roll counting, counting books on a shelf,
 
-You can also come up with your own topic which will need to be approved.
+You can also come up with your own topic which will need to be approved during the lab on **11.12. 13:10**.
 
 #### Requirements
 
-The main output of the project is a presentation, which will take place during the last lab session and a code/demo for your project.
+The main output of the project is a presentation, which will take place during the last lab session **18.12. 13:10** and a code/demo for your project.
 
 It is expected that the work on project will include:
 * study of relevant literature (blogs/turorials online are sufficient)
