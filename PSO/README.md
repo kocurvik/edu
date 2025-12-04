@@ -35,7 +35,7 @@ EN:
 
 ### Úlohy - Homework
 
-**TBA**
+Finish the homework assignments in the folder notebooks/hw2025 by **5.1.2026 12:00**. Submit the homework as a zip to my email, or a google drive link. Possibly you can also set up a repo.
 
 ### Projekty (SK)
 Príklad tém: segmentácia ruky, spočítanie hodnoty mincí na stole, detekcia hodu hracej kocky, spočítanie kníh na poličke,
