@@ -1,3 +1,34 @@
+# Deep Learning for Computer Vision-2-AIN-226/22
+
+## Contents
+
+* lectures - PDF files from lectures
+* notebooks - Google Colab notebooks for practical sessions / labs
+* supplementary - various downloadable materials and images for notebooks
+* gcloud - scripts and other materials for Google Cloud practical sessions / labs
+
+## Classes
+
+* Lectures - Thursday 9:50 M-I
+* Practical Sessions / Labs - Monday 11:30 F1-248
+  
+## Grading
+
+Scoring is divided into four parts: midterm, homework assignments, project, oral exam. In total, 100 points can be obtained.
+
+* Up to 20 points can be obtained for the midterm.
+* Up to 30 points can be obtained for homework assignments.
+* Up to 40 points can be obtained for the project.
+* Up to 20 points can be obtained for the oral exam (10 points per question).
+
+Projects will be evaluated after the final presentation. Since a project in deep learning sometimes cannot be rushed, it will be possible to present projects at a date towards the end of the exam period as well. For this reason, it is possible to take the exam before project points are awarded.
+
+A grade can be received upon reaching a sufficient number of points. It follows from the scoring distribution that it is necessary either to present a project or to take the exam.
+
+### Grading Sheet / Scoreboard
+
+[link](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
+
 ## Homework 1
 
 The first homework will consist of practical testing of the things we just mentioned. It is divided into several parts. The output of the task can be either multiple notebooks or python scripts that you used to run the experiments. The output should also contain a pdf file with results and graphs that will demonstrate your claims.
