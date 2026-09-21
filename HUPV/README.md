@@ -9,25 +9,27 @@
 
 ## Výuka
 
-* Prednášky - utorok 9:50 F1-247
-* Cvičenia - štvrtok 11:30 F1-248
+* Prednášky - štvrtok 9:50 M-I
+* Cvičenia - pondelok 11:30 F1-248
   
 ## Bodovanie
 
-Bodovanie je rozdelené na dve časti: praktická časť a skúška. Dohromady je možné získať 100 bodov.
+Bodovanie je rozdelené na štyri časti: midterm, domáce úlohy, projekt, ústna skúška. Dohromady je možné získať 100 bodov.
 
-* V praktickej časti je možné získať 30+ bodov za domáce úlohy z cvičení a 40 bodov za projekt. Je možné dohodnúť si rôzne druhy projektov a body sa budú odelovať s prihliadnutím na obtiažnosť. Do finálnej známky sa z cvičení počíta maximálne 60 bodov. Na absolvovanie predmetu je za túto časť nutné získať aspoň 30 bodov.
-* Za skúšku je možné získať 40 bodov. 20 bodov je možné získať za písomnú časť, 20 bodov je možné získať za ústnu odpoveď v dvoch vylosovaných témach.
+* Za midterm je možné získať 20 bodov.
+* Za domáce úlohy je možné získať 30 bodov.
+* Za projekt je možné získať 40 bodov.
+* Za ústnu skúšku je možné získať 20 bodov (10 bodov na otázku).
 
 Projekty sa budú hodnotiť po finálnej prezentácii. Keďže v deep learningu sa projekt niekedy nedá uponáhľať, tak bude možné projekty prezentovať aj na termíne ku koncu skúškového obdobia. Z tohto dôvodu je možné ísť na skúšku ešte pred udelením bodov za projekt.
 
-Finálna známka bude určená až po absolvovaní skúšky a prezentácie projektu. V prípade, že študent/ka bude mať aspoň 30 bodov za domáce úlohy, tak môže dostať známku aj bez prezentácie finálneho projektu (dufáme však, že aj v takom prípade urobí aspoň menší projekt).
+Známku je možné dostať po dosiahnutí dostatočného počtu bodov. Z bodovania vyplýva, že je nutné buď prezentovať projekt, alebo absolvovať skúšku.
 
 ### Bodovacia Tabulka
 
 [link](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
 
-# Domáce úlohy
+# Domáce úlohy (Nektuálne)
 
 # Domáca úloha č. 1
 
