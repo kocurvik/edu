@@ -2,7 +2,7 @@ Linky:
 
 [Colab notebook pre DeepDream](https://colab.research.google.com/github/kocurvik/edu/blob/master/PSUUIVD/colab_intro_deepdream.ipynb)
 
-[Colab notebook pre Lokalizáciu](https://colab.research.google.com/github/kocurvik/edu/blob/master/PSUUIVD/colab_intro_deepdream.ipynb)
+[Colab notebook pre Lokalizáciu](https://colab.research.google.com/github/kocurvik/edu/blob/master/PSUUIVD/fixed_demo_hloc.ipynb)
 
 [Repozitár ktorý sa pri tom používa](https://github.com/cvg/Hierarchical-Localization)
 
