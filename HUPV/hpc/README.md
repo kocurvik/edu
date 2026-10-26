@@ -261,3 +261,4 @@ In https://ood.devana.nscc.sk open **Interactive Apps → Jupyter Notebook**, se
 | `scancel <JOBID>` | cancel a job |
 | `sacct -j <JOBID>` | info about a finished job |
 | `srun -A <PROJECT> -p gpu --gres=gpu:1 --time=00:20:00 --pty bash` | interactive shell on a GPU node (for debugging) |
+| `seff <JOBID>` | see if you used the resources efficiently (after project end) |
