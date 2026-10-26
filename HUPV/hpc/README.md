@@ -34,6 +34,7 @@ The GPU hours come from a **shared project allocation** – every wasted hour is
 - **Ask only for what you need:** 1 GPU, a few CPU cores and a short time limit (e.g. 30 minutes). Smaller jobs also start sooner.
 - **Debug on a small subset** of the data first (the dataset contains a `sample/` folder).
 - **Cancel jobs** you no longer need (`scancel`) and **delete Jupyter sessions** in Open OnDemand when you are done – an idle notebook still blocks a GPU.
+- **Avoid Heavy IO** on shared folders. Use `/work/<jobid>/` if you need to continuously read or write large files. Otherwise you limit the other users of the cluster. Before running you task first copy whatever data you need to `/work/<jobid>/` and then read from there. Note that if you read some data only once at the start this is not necessary.
 ---
 
 ## 1. Generate an SSH key
@@ -94,13 +95,15 @@ Go to https://ood.devana.nscc.sk and log in with your username, password and 2FA
 
 ## 3. Prepare a conda environment
 
-Software on the clusters is provided through **modules**. Conda is available as a module:
+Software on the clusters is provided through **modules**. Conda is available as a module on Devana:
 
 ```bash
 module avail conda      # find the exact module name
-module load conda
+module load MiniConda   # see previous list, conda is not available on perun
 eval "$(conda shell.bash hook)"   # makes `conda activate` work in the current shell
 ```
+
+For Perun no conda module is available so you can install it: [MiniConda](https://continuumio-docs.readthedocs-hosted.com/miniconda/), [Anaconda](https://continuumio-docs.readthedocs-hosted.com/getting-started/), or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
 
 Now create your own conda environment with everything the task needs – PyTorch, torchvision, `submitit` (for option B in step 6) and `jupyter` (for option C). Activate it and check that `torch` imports. You won't see a GPU on the login node, that is expected.
 
