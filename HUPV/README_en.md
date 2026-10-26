@@ -79,7 +79,7 @@ The task is relatively straightforward, as its goal is rather to gain experience
 
 Submit the task in a zip with notebooks/scripts, a pdf with the results and your model to the e-mail address `kocurvik@gmail.com' Divide the pdf into sections like here and ideally also into sub-sections where it makes sense. Always write a comment on the results about how they turned out.
 
-The deadline is **21.11.2025 12:00**. I will deduct points for late submissions.
+The deadline is **16.11.2026 16:00**. I will deduct points for late submissions.
 
 
 ## Homework no. 1 (15b) - Alternative
