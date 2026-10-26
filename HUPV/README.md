@@ -29,7 +29,7 @@ Známku je možné dostať po dosiahnutí dostatočného počtu bodov. Z bodovan
 
 [link](https://docs.google.com/spreadsheets/d/1oGddioqF9-LL4pEr5f0VdXgg_hKkn2rmF_YBNlTihY4/edit?usp=sharing)
 
-# Domáce úlohy (Nektuálne)
+# Domáce úlohy
 
 # Domáca úloha č. 1
 
@@ -83,7 +83,7 @@ Vytvorte model, ktorý dosiahne najlepší vylsedok, aký len viete. Tieto body 
 
 Úlohu odovzdajte v zipe s notebookmi/skriptami, pdfkom s výsledkami a vašim modelom na mailovú adresu kocurvik@gmail.com Pdfko rozdelte na sekcie ako tu a ideálne aj do podeskcií kde to dáva zmysel. K výsledkom vždy vypíšte komentár ako dopadli.
 
-Deadline je do **21.11.2025 12:00**. Pri neskoršom odovzdaní budem strhávať body.
+Deadline je do **16.11.2026 16:00**. Pri neskoršom odovzdaní budem strhávať body.
 
 
 ## Domáca úloha č. 1 (15b) - Alternatíva
