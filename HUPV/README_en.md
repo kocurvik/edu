@@ -126,7 +126,7 @@ The grading will not directly take into account what results your model achieved
 
 The deadline for the entire assignment is **15.12.2026 10:00**. Since training can take a relatively long time, I recommend starting earlier than a week before turning the homework in. You can train wherever you want, but I recommend trying Devana.
 
-## Homework no. 3 (5b)
+## **Deprecated since 2026** Homework no. 3 (5b)
 
 The goal of the third task will be to examine some ethical or social problem related to the use of machine learning. This problem may not be directly related to computer vision. Below are examples of topics I suggested to students a few years back. You can take this list as a free inspiration. I would be happy if you choose your own topic. Topic approval is mandatory to avoid duplicate topics. Email me the topics and I'll enter them into the scoring table.
 
