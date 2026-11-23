@@ -81,11 +81,6 @@ Submit the task in a zip with notebooks/scripts, a pdf with the results and your
 
 The deadline is **16.11.2026 16:00**. I will deduct points for late submissions.
 
-
-## Homework no. 1 (15b) - Alternative
-
-As an alternative to the first homework, one of the notebooks from the exercises can be rewritten into another framework. Target frameworks can be, for example, JAX, or something else. If you are interested in this form of the first home homework please discuss this option with me.
-
 ## Homework no. 2 (15b) - Object Detector
 The goal of the second homework will be to train an object detector on a smaller dataset.
 
@@ -129,7 +124,7 @@ Email a pdf file with a description of the model, data preparation, training and
 ### Grading
 The grading will not directly take into account what results your model achieved, but rather the training process. However, if, for example, you will not have sufficient time to train the model fully, it is sufficient if you train a model that at least works a little after a few epochs and also make then perform evaluation on this unfinished model. You will also get some of the points for describing how the object detector itself works. Therefore, it is worthwhile to choose one and describe it if, for example, fewer points are enough for you.
 
-The deadline for the entire assignment is **16.12. 9:00**. Since training can take a relatively long time, I recommend starting earlier than a week before turning the homework in. You can train wherever you want, but I recommend trying Google Cloud.
+The deadline for the entire assignment is **15.12.2026 10:00**. Since training can take a relatively long time, I recommend starting earlier than a week before turning the homework in. You can train wherever you want, but I recommend trying Devana.
 
 ## Homework no. 3 (5b)
 
