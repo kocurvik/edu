@@ -138,7 +138,7 @@ V hodnotení nebude priamo zohľadnené to aké výsledky váš model dosiahol, 
 Deadline na celú úlohu je **15.12.2026 10:00**. Keďže trénovanie môže trvať relatívne dlho, tak odporúčam začať skôr ako týždeň pred odovzdaním. Trénovať môžete kde chcete, ale odporúčam Devanu.
 
 
-## Domáca úloha č. 3 (5b)
+## **Neauktuálne od 2026** Domáca úloha č. 3 (5b)
 
 Cieľom tretej úlohy bude preskúmať nejaký etický, alebo spoločenský problém týkajúci sa využitia machine learningu. Tento problém sa nemusí týkať priamo počítačového videnia. Dole sú príklady tém, ktoré som študentom navrhoval pár rokov späť. Tento zoznam môžete brať ako voľnú inšpiráciu. Budem rád ak si vyberiete vlastnú tému. Je povinné schválenie témy aby sme sa vyhli duplicitným témam. Témy mi pošlite mailom a ja ich zapíšem do bodovacej tabuľky.
 
